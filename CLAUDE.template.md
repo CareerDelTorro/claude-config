@@ -201,5 +201,8 @@ your own sessions — the value comes from rules earned on real failures, not in
 - **Build momentum crowds out re-derivation.** Once code exists, responses gravitate toward
   editing it; schedule the checkpoint "edit-the-build or return-to-the-design?" When several
   symptoms point at one missing mechanism, build the mechanism — stop patching around it.
-- **Verify UI with pixels, not DOM reads** (if you do UI work). `textContent` existing ≠
-  visible — screenshot and look before disputing a reported visual bug.
+- **Verify UI with pixels, not DOM reads — and at the PAYOFF site, not just where you set it.**
+  `textContent` existing ≠ visible — screenshot and look before disputing a reported visual bug.
+  When a feature is CONFIGURED on one stage and PAYS OFF on another, screenshot the *payoff* stage:
+  a correct-data log at the config site is not proof the payoff renders. A spatial feature isn't
+  done until the space is visible where it's meant to matter.
