@@ -25,6 +25,11 @@ is itself the failure this rule prevents: the small, repeated lapses are where t
 waste lives. If, after honest analysis, nothing generic survives (a true one-off), say so
 explicitly — don't silently skip the check.
 
+**Enforcement can be a hook, not willpower.** Prose in this file cannot *guarantee* an every-turn
+behaviour — a rule that keeps slipping needs the harness, not stronger wording. Move it into a
+Claude Code hook (see [`hooks/`](hooks/) for worked examples: the capture-loop gate, plus tone and
+run-to-completion guards), which fires deterministically where memory can't.
+
 ## Verify vs infer
 
 When stating a fact about a codebase or about runtime behavior, distinguish what I
