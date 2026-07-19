@@ -173,6 +173,16 @@ your own sessions — the value comes from rules earned on real failures, not in
 - **A validated component is not a validated architecture.** One piece testing well doesn't
   validate the structure around it — re-test the frame explicitly, especially when one piece
   is confirmed good.
+- **Don't harden (or deep-verify) what you flagged as uncertain — feel-validate first.** If a
+  feature is unsure enough that you raise it as an open question, or it hasn't yet had real
+  contact with a user (a playtest, a demo), don't in the same breath invest in *entrenching* it:
+  stricter validation, added enforcement, an adversarial-verification pass. Hardening the thing
+  you're least sure of maximizes wasted work when it flips — and can push it the *wrong way*. The
+  incoherence tell: you're writing "should this be X or Y?" while your code change *adds strictness
+  to X*. Spend pre-feedback effort on unambiguous fixes and reversible choices; save deep
+  verification for what has already met a user. Corollary — a behavior change isn't done until the
+  copy that describes it is swept: grep the presentation layer (labels, hints, tooltips) for text
+  describing the OLD behavior whenever a mechanic changes.
 - **Beware checklists that encode half the spec.** A build that passes your checks and still
   fails the goal means the checklist is incomplete — audit it against the full model before
   shipping another fix.
