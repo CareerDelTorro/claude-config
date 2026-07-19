@@ -183,6 +183,18 @@ your own sessions — the value comes from rules earned on real failures, not in
   verification for what has already met a user. Corollary — a behavior change isn't done until the
   copy that describes it is swept: grep the presentation layer (labels, hints, tooltips) for text
   describing the OLD behavior whenever a mechanic changes.
+- **Scope the fix to the behavior the user objected to — don't tear out the surrounding system.**
+  A complaint about how a feature *behaves* is a request to adjust the behavior, not to delete the
+  feature. When a correction is ambiguous between "adjust this one behavior" and "remove this whole
+  system," and you can't ask, default to the SMALLER, lower-cost-to-reverse change — removing a
+  system to fix one of its behaviors wastes a round of rework and usually destroys something the
+  user wanted kept. The tell: when the user talks *inside* a system's own concepts (naming its
+  parts and positions), they want it kept and working better — fix the verb they complained about,
+  not the noun they used.
+- **Legibility is a hard requirement, not a taste call — secondary text especially.** Helper /
+  caption / subtitle text must be readable at the ACTUAL render scale, never shrunk to a decorative
+  whisper. Size non-headline copy to be read, verify it in a screenshot at real scale, and treat
+  "can the user actually read this?" as a pass/fail gate on any UI you ship.
 - **Beware checklists that encode half the spec.** A build that passes your checks and still
   fails the goal means the checklist is incomplete — audit it against the full model before
   shipping another fix.
