@@ -211,4 +211,9 @@ your own sessions — the value comes from rules earned on real failures, not in
   `textContent` existing ≠ visible — screenshot and look before disputing a reported visual bug.
   When a feature is CONFIGURED on one stage and PAYS OFF on another, screenshot the *payoff* stage:
   a correct-data log at the config site is not proof the payoff renders. A spatial feature isn't
-  done until the space is visible where it's meant to matter.
+  done until the space is visible where it's meant to matter. And reproduce the user's **EXACT
+  reported scenario**, not an adjacent case that happens to pass: when they say "the enemy won't
+  walk up to the *back* unit," verify *that* (a melee attacker vs a lone far-back target), not a
+  generic front-vs-front fight that clashes at centre and looks fine. Corollary — "do X to/at the
+  target" is target-RELATIVE; don't implement it against a fixed proxy point (a fixed centre clash
+  is not "adjacent to the target" once the target is far back).
