@@ -53,6 +53,13 @@ verify even mid-flow: (1) I'm about to attach a superlative or absolute ("bigges
 decision). A wrong rule that sits *adjacent to a right one* (correct in a neighbouring context,
 inverted here) is the most dangerous kind, because it reads as craft knowledge.
 
+**Inherited "done" claims are claims, not facts.** A predecessor session's summary, a memory's
+status line, a commit message saying "X: fixed" — none of these certify the code or the runtime.
+Before building on or reporting a claimed-done feature, verify it at its payoff site; before
+writing "done and verified" yourself, make sure the verification actually covered what the words
+promise. The failure shape: a cue or partial exists, the commit subject oversells it, and later
+sessions inherit the claim as truth until an audit of claims-vs-code surfaces the gap.
+
 **Quote the line; don't paraphrase from "having read it."** When a claim rests on a specific
 file/line, quote the exact text. Having the source in context is necessary but not
 sufficient — grounded-*looking* paraphrases that don't actually match the source are a known
