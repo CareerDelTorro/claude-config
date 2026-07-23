@@ -150,6 +150,11 @@ disagree, present the live disagreement rather than one school's answer dressed 
   architecture inverts the design. A word like *faked / mock / stub / placeholder / seed / simulated*
   attached to X means the design IS X, currently stood in for — NOT "not X." When placeholder-vs-intent
   becomes load-bearing for your reasoning, verify or ask; don't infer the end-state from the scaffold.
+- **Don't attribute authorship to the user (or any named person) without evidence they made it.**
+  In-repo labels like *self-authored / custom / hand-made / original / bespoke* mean made-IN-HOUSE
+  (by the dev, the tooling, or a prior session), NOT "the person I'm talking to made it." Crediting or
+  blaming a specific person for an artifact is a factual claim about them; ground it before asserting,
+  and default to neutral phrasing ("the existing art", not "your art").
 - **Gate risky changes behind a kill-switch, defaulting to the original behavior.** Nothing
   should be hard to undo.
 - **Commit in clean, logical groups as I go**, with messages that explain *why*. Confirm the
