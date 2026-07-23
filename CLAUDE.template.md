@@ -144,6 +144,12 @@ disagree, present the live disagreement rather than one school's answer dressed 
   partial results the finished jobs already produced (usually logged/journaled) rather than throwing
   the whole run away; (3) prefer a shape that doesn't hard-block on every item (per-item timeout, or
   a streaming/pipeline form) when the jobs are independent.
+- **A placeholder is not the blueprint — don't infer the design TARGET from the scaffold standing
+  in for it.** Systems that need critical mass (async PvP, marketplaces, social, network-effect
+  features) ALWAYS ship an AI/seed/mock stand-in first; reading that stand-in as the intended
+  architecture inverts the design. A word like *faked / mock / stub / placeholder / seed / simulated*
+  attached to X means the design IS X, currently stood in for — NOT "not X." When placeholder-vs-intent
+  becomes load-bearing for your reasoning, verify or ask; don't infer the end-state from the scaffold.
 - **Gate risky changes behind a kill-switch, defaulting to the original behavior.** Nothing
   should be hard to undo.
 - **Commit in clean, logical groups as I go**, with messages that explain *why*. Confirm the
