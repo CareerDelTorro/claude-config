@@ -60,6 +60,17 @@ writing "done and verified" yourself, make sure the verification actually covere
 promise. The failure shape: a cue or partial exists, the commit subject oversells it, and later
 sessions inherit the claim as truth until an audit of claims-vs-code surfaces the gap.
 
+**When you resolve a spec's OPEN question in code, sync the spec at the same line — code drifting
+AHEAD of the design doc resurrects an audit finding just like code drifting BEHIND it.** Finding
+built-but-unwired capability can be a deliberate DROP, not a missing feature; equally, building the
+thing a spec flags as OPEN is a DECISION. Either way, if the doc's stale line isn't updated at the
+exact place an audit keys off, the next audit re-flags it — and it reads as "the code is wrong" when
+often the code is right and the doc just wasn't synced. Closing the spec line is PART of shipping the
+change, not optional follow-up. (Case: shipped a mechanical feature per the user's explicit verbal
+call but left the spec's "zero-impact cosmetic / OPEN: keep pure or add a mechanical pick?" lines
+untouched; a later audit correctly flagged the just-shipped code as contradicting the spec. The code
+matched the user's decision; the un-synced doc manufactured the finding.)
+
 **Quote the line; don't paraphrase from "having read it."** When a claim rests on a specific
 file/line, quote the exact text. Having the source in context is necessary but not
 sufficient — grounded-*looking* paraphrases that don't actually match the source are a known
