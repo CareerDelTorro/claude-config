@@ -136,6 +136,14 @@ disagree, present the live disagreement rather than one school's answer dressed 
   first, find the *real* bottleneck, and say dead ends out loud — "we proved X isn't the
   problem" is a result. Don't tune what I haven't measured, and don't keep pushing a theory
   the data contradicts.
+- **A parallel fan-out that awaits ALL its work (a barrier) is hostage to its slowest item.** When
+  you dispatch N independent jobs and block on every one finishing, a single hung/slow/looping job
+  stalls the whole batch indefinitely — and you won't notice unless you look, because "still running"
+  and "wedged" look identical from outside. Guards: (1) don't fire-and-forget a long fan-out — check
+  that all N are advancing, not stuck on one; (2) when one is wedged, kill the batch and HARVEST the
+  partial results the finished jobs already produced (usually logged/journaled) rather than throwing
+  the whole run away; (3) prefer a shape that doesn't hard-block on every item (per-item timeout, or
+  a streaming/pipeline form) when the jobs are independent.
 - **Gate risky changes behind a kill-switch, defaulting to the original behavior.** Nothing
   should be hard to undo.
 - **Commit in clean, logical groups as I go**, with messages that explain *why*. Confirm the
