@@ -93,6 +93,19 @@ turn, not an occasional move.
   design doc, a risky change, a decision about to be committed.
 - **Report honestly.** Surface findings that survived refutation, not the raw list; if nothing
   material survives, say so plainly rather than manufacturing concerns.
+- **A fan-out's coverage is bounded by the scope you hand it — an internal adversarial pass cannot
+  catch a gap OUTSIDE that scope, and the polished multi-agent output launders the gap into false
+  confidence.** Point N research/review agents at one subsystem's files and all N inherit that blind
+  spot; a skeptic stage arguing *within* the same scope never surfaces an adjacent existing feature
+  nobody was told to read. Before relaying a workflow's load-bearing "this is NEW / this is MISSING /
+  we should ADD X" conclusion, sweep the surface the workflow was never pointed at — especially
+  entry-point / onboarding / sibling areas where the thing may already live. This is "verify the
+  current code before recommending X because you lack Y" applied to *delegated* research: the more
+  agents you ran, the more the thoroughness *feels* verified, the more suspect a greenfield "let's
+  build X" claim is. (Case: a multi-agent research workflow recommended adding a "new" system; the
+  agents were scoped to one subsystem's files and none read the entry-point screen, so the fleet
+  missed that the app ALREADY offered that exact mechanic at start-up — the user wanted it upgraded,
+  not rebuilt.)
 
 ## Reasoning protocol (the working contract)
 
