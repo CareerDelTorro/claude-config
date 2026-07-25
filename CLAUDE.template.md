@@ -300,3 +300,25 @@ your own sessions — the value comes from rules earned on real failures, not in
   generic front-vs-front fight that clashes at centre and looks fine. Corollary — "do X to/at the
   target" is target-RELATIVE; don't implement it against a fixed proxy point (a fixed centre clash
   is not "adjacent to the target" once the target is far back).
+- **A screenshot only verifies what I LOOK AT — diff against the before-shot at identical framing, and
+  ask "what ELSE moved?"** Taking the screenshot is necessary but not sufficient: the failure is
+  looking at the new image, confirming the property I set out to improve, and declaring success while a
+  regression in an ADJACENT property (size, position, overlap, clipping) sits in the very same frame
+  unnoticed. Confirmation-biased verification feels identical to real verification from the inside — I
+  have "checked the pixels," so the box is ticked. Guards: (1) capture BEFORE and AFTER at the SAME
+  framing/zoom and compare them side by side, never judge the after-shot alone; (2) frame wide enough
+  to include the element's CONTAINER, so overhang/clipping is visible — a tight crop on the thing I
+  changed structurally cannot show that it outgrew its box; (3) when the user asked for a RELATIVE
+  change ("10% smaller"), state the before and after MEASUREMENTS, not an impression — a number
+  contradicts a wrong result, an eyeball ratifies it. (Case: asked to shrink two UI badges 10%, I
+  shipped them ~80% BIGGER and overhanging their cards, wrote "a clear improvement" under a screenshot
+  that plainly showed the overhang, and only the user caught it. I had been looking for the legibility
+  I'd set out to fix — which genuinely did improve — and never asked whether anything else had changed.)
+  - **Corollary — a "drop-in" replacement asset must preserve the original's INTRINSIC size.** When I
+    author a replacement for an existing sprite/asset, changing its resolution while keeping its
+    pixels-per-unit (or DPI, or viewBox) silently rescales its world size and therefore every existing
+    caller's layout. DERIVE the unit-scale from the resolution so intrinsic size is invariant
+    (`PPU = pixels / intended_world_size`), and never change resolution and scale in the SAME edit —
+    the relative math then rides a moved baseline and the error hides inside an intended change.
+    (Case: I replaced a soft 96px/PPU-100 disc with a crisp 192px one and left PPU at 100, doubling its
+    world size; the requested x0.9 on top produced 1.8x.)
