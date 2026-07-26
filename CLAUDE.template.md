@@ -300,7 +300,29 @@ your own sessions — the value comes from rules earned on real failures, not in
   "can the user actually read this?" as a pass/fail gate on any UI you ship.
 - **Beware checklists that encode half the spec.** A build that passes your checks and still
   fails the goal means the checklist is incomplete — audit it against the full model before
-  shipping another fix.
+  shipping another fix. The same trap in code: an automated guard that *enumerates* known
+  instances of an OPEN class — e.g. catching "honest &lt;noun&gt;" via a fixed noun allowlist
+  (status/take/…) — leaks on every novel instance ("honest scoping", "honest implication") and
+  gives false confidence the rule is enforced. For an open/productive class, match the generative
+  *structure* (or denylist the small, stable set of legitimate cases); never allowlist the open one.
+  - **Your own TEST SUITE is the most dangerous instance of this, because passing it feels like
+    proof.** A suite you write inherits the blind spot of the code you just wrote — same mind, same
+    unexamined assumption — so it tends to enumerate *scenarios you thought of* rather than cover
+    the *state space* of the property. When verifying a SAFETY property (nothing is lost / nothing
+    is corrupted / it is idempotent), do NOT hand-pick cases: identify the state dimensions and
+    generate their CROSS-PRODUCT, then assert the invariant over every cell. And never let the
+    pass-count stand in for coverage — "15/15 passed" quantifies what you generated and says
+    exactly nothing about what you failed to generate, yet it reads like certification. If you are
+    about to report a suite result with an absolute ("can't lose anything", "verified safe"), that
+    phrasing is the trigger to go back and ask which dimension you never varied. (Case: a
+    two-device state-merge feature, verified with 15 hand-written browser tests — empty vs full,
+    disjoint, idempotent, garbage input, unicode — all passing, reported to the user as "the merge
+    can't lose anything." Every payload generated was either wholly empty or disjoint from local
+    state; a PARTIAL-field overlap was never generated. An adversarial review fleet generated one
+    and found the merge silently deleted a device's assignments and its note whenever the other
+    side won a tie-break while carrying only one of the two fields — under a UI message reading
+    "Nothing was deleted." The small cross-product that should have been written first catches it
+    in the first few cells.)
 - **Build momentum crowds out re-derivation.** Once code exists, responses gravitate toward
   editing it; schedule the checkpoint "edit-the-build or return-to-the-design?" When several
   symptoms point at one missing mechanism, build the mechanism — stop patching around it.
