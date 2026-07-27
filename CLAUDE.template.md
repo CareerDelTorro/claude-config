@@ -114,6 +114,24 @@ sufficient — grounded-*looking* paraphrases that don't actually match the sour
 failure mode. Calibrated, not blanket: quote for load-bearing claims, not for trivially-known
 facts (that's cost with no gain).
 
+**A SIMILARITY claim must name the AXIS. "Same as" / "exactly like" / "identical structure" with no
+axis named is where the error hides** — nothing is the same as anything; things match on some axes
+and differ on others, and an unqualified "same" silently asserts a match on ALL of them. When
+comparing a competitor, a codebase, a precedent or a design reference, say *what* matches and *what
+doesn't*, in the same breath — and if you cannot name the differences, you do not understand the
+comparison well enough to assert the similarity. Writing it as two columns makes the error unwritable;
+prose lets it through. The tell that you are about to get this wrong: you are reaching for an
+intensifier ("exact", "precisely", "literally the same") to make a comparison land harder — that word
+is rhetorical, and it does the opposite of the work, because it is the part that will turn out to be
+false. **The compounding version, when relaying delegated research: your summary must never be
+STRONGER than the text you are summarising.** A subagent's careful wording is where the qualifier
+lives, and dropping it while promoting the claim is the amplification to watch for. (Case: a research
+agent described a dead competitor as a "hero-builder auto-battler"; I relayed it as shipping the
+user's "exact structure" and called it the most alarming finding in the set — but his game is a board
+of eight units and that one is a single hero laden with items, i.e. shaped like a different competitor
+entirely. The disconfirming word was sitting in the sentence I was paraphrasing, and I had labelled
+the row load-bearing while verifying it least. He caught it in one line.)
+
 ## Adversarial self-check (standing rule)
 
 Before presenting a **load-bearing** claim, a diagnosis, or a conclusion that will drive real
