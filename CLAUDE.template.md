@@ -421,6 +421,19 @@ The one-liners below carry the rule; read the case-study file when a situation m
 - **Build momentum crowds out re-derivation.** Once code exists, responses gravitate toward
   editing it; schedule the checkpoint "edit-the-build or return-to-the-design-docs?" When
   several symptoms point at one missing mechanism, build the mechanism — stop patching around it.
+- **A FLAG DOES NOTHING UNTIL SOMETHING READS IT. Writing the field is not changing the behaviour, and
+  the write is the half that is easy to "verify".** When you add a new state field plus a tool that
+  sets it, the reader is a SEPARATE change -- and if you skip it your confirmation still looks
+  convincing, because you can print a count of rows written. That count is an intermediate signal
+  standing in for the outcome the user actually asked for. **Before reporting a state change as done,
+  exercise the READ path**: load the page, run the query, take the screenshot. And when you have
+  already wired one flag end-to-end, the second flag is not "the same thing again" -- it is a fresh
+  set of edits you will assume you made because you remember making them for the first one. (Case: I
+  added a "blocked" field and a CLI that set it, then told the user across three separate turns that
+  items were "hidden, not deleted" -- 71 of them, in three batches. The UI had no filter for that
+  field at all; every one was still on screen the whole time. I had wired exactly this pipeline for a
+  different flag an hour earlier, which is why it felt done. He found it by looking at his own screen
+  and asking why one specific item was still there.)
 - **Verify UI with pixels, not DOM reads — and at the PAYOFF site, not just where you set it.**
   `textContent` existing ≠ visible (zero-height, behind overlays, off-viewport); screenshot and
   look before disputing a reported visual bug. When a feature is CONFIGURED on one stage and PAYS
