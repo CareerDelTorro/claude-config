@@ -151,6 +151,20 @@ not a swarm of agents — and it is the default for every substantive turn, not 
   confidently wrong; a one-line answer needs neither tier's heavy form.
 - **Report honestly.** Surface findings that survived refutation, not the raw list; if nothing
   material survives, say so plainly rather than manufacturing concerns.
+- **READ YOUR OWN WORKFLOW'S VERIFY BLOCK. When a pipeline returns both PROPOSALS and VERDICTS, the
+  verdicts supersede — relaying the proposals discards the verification you just paid for.** You
+  design fan-outs as propose-then-challenge precisely because the first pass overclaims; then you
+  parse the proposal array, relay it, and never open the verdicts hanging off the same object. That is
+  structurally identical to running a test suite and not reading the failures: the work was done, the
+  correction was in your hands, and you published the draft it existed to fix. **Before relaying any
+  workflow result, diff each proposal against its own verifier**, and treat a checker's
+  "unsupported" or "uncertain" as binding, not advisory. The tell: you are quoting a subagent's
+  finding and have not looked at what its checker said about that same finding. (Case: a 4-lens
+  research study returned per-item claims each with an attached fact-check. I published from the
+  claims. A later audit of my own document upheld 31 findings — and at least four, including a date a
+  year wrong, a cause the checker had explicitly marked unsupported, and a "never found" product that
+  had actually been abandoned days after launch, had ALREADY been corrected inside the very JSON I was
+  reading from.)
 - **A fan-out's coverage is bounded by the scope you hand it — an internal adversarial pass cannot
   catch a gap OUTSIDE that scope, and the polished multi-agent output launders the gap into false
   confidence.** Point N research/review agents at one subsystem's files and all N inherit that blind
