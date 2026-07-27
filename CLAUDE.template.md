@@ -376,6 +376,32 @@ The one-liners below carry the rule; read the case-study file when a situation m
   describes it is swept**: when a mechanic changes, grep the presentation layer (labels, hints,
   tooltips) for text describing the OLD behavior; stale explanatory copy is the tell a change
   stopped at the code and never reached what the player reads.
+- **Before auditing anything, establish whether its subject is DECIDED — measuring an undecided value
+  yields a fact about a placeholder, dressed as a defect.** An audit reports *defects*, and a defect
+  requires an intended value to deviate from. Where nothing has been decided yet — costs not priced,
+  curves not tuned, content not chosen — there is no intent, so a measurement there produces an
+  observation at best and a fabricated finding at worst. **Separate STRUCTURAL findings from VALUE
+  findings before reporting, and lead with the split.** Structural — a mechanism absent, two systems
+  contradicting each other, a field nothing reads, code with zero call sites, a ledger claiming
+  something shipped that didn't — is valid at ANY phase, because it is wrong regardless of what the
+  numbers become. Value — a win rate, a price, a drop weight, a difficulty curve — is only meaningful
+  *after* someone has decided what it should be; reporting it pre-decision asks the user to defend a
+  placeholder they already know is a placeholder. **The rigour of the measurement is what makes this
+  dangerous:** a Monte-Carlo over hundreds of thousands of draws, or a sweep of every permutation, is
+  real work and reads as authoritative, so a precise number about an untuned system launders a
+  category error into a finding. Precision on a placeholder is not evidence. Ask "has this been
+  decided?" *before* spending the fan-out, not after — and when the answer is no, the useful output is
+  the structural subset plus an explicit note that the values were skipped as pre-balance. (Case: the
+  user asked why a competitor product failed; I turned that into a decision-density audit of our own
+  opening and reported difficulty win-rates by stage, pricing branching factor, and drop-table
+  thresholds as defects. The user's answer: *"nothing is balanced and the content is not decided yet.
+  Why is that being judged."* Correct — roughly half those findings measured deliberate placeholders.
+  The structural half — a mechanic not wired into the simulation at all, a seed that never folded in
+  the run seed, one clock silently bypassing another system's budget, a feature with zero call sites
+  that the build ledger called shipped — survived the objection intact, and that is what I should have
+  reported alone.) This is the grading counterpart to "a placeholder is not the blueprint": that rule
+  says don't infer the design TARGET from the scaffold; this one says don't grade the SCAFFOLD against
+  a target nobody has set.
 - **Scope the fix to the behavior the user objected to — don't tear out the surrounding system.**
   A complaint about how a feature *behaves* is a request to adjust the behavior, NOT to delete the
   feature. When a correction is ambiguous between "adjust this one behavior" and "remove this whole
