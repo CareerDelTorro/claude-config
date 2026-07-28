@@ -165,6 +165,27 @@ not a swarm of agents — and it is the default for every substantive turn, not 
   year wrong, a cause the checker had explicitly marked unsupported, and a "never found" product that
   had actually been abandoned days after launch, had ALREADY been corrected inside the very JSON I was
   reading from.)
+- **When a result ships a NUMBER and a verbal "why", check that the why actually GENERATES the
+  number — and if they disagree, that disagreement is sitting in your hands, free.** A crisp formal
+  argument (pigeonhole, information-theoretic, a complexity bound, "this is structural, not tuning")
+  attached to a computed result is exactly where a category error hides, because the formality *reads
+  as* verification and invites you to relay it as the load-bearing part. Two concrete checks, both
+  cheap: **(1) run the argument against the printed table — if the prose implies impossibility and the
+  table prints a nonzero value for the same event, one of them is wrong and you must find out which
+  BEFORE relaying either.** (2) Test the argument's premises against the system's actual structure,
+  especially any premise smuggled in by an adjective. **The word that makes such a claim false is
+  usually already in the sentence** — you read it, register it as technical vocabulary, and never ask
+  whether it holds here. The label "structural / holds at any tuning" is not a reason to scrutinise a
+  claim less; it is the reason to scrutinise it MOST, because it is the part that will be built on
+  hardest and the part you will repeat in a summary where the supporting table does not travel with
+  it. (Case: a workflow gave me a decisive factor — *"two disjoint 3-of-a-kinds require six slots;
+  that is pigeonhole, not tuning"* — for why a small board could not support two overlapping
+  category axes. I relayed it as the structural core, twice, including in a one-paragraph summary. It
+  is wrong: in a two-axis system every element carries BOTH tags, so three elements sharing both
+  categories satisfy both 3-thresholds on three slots. The sets are not disjoint; they are the same
+  elements counted twice. The falsifying word "disjoint" was in the claim I quoted, and the
+  workflow's own probability table two lines below printed nonzero values for the event the argument
+  called impossible. The user spotted it from the one-line summary alone.)
 - **A fan-out's coverage is bounded by the scope you hand it — an internal adversarial pass cannot
   catch a gap OUTSIDE that scope, and the polished multi-agent output launders the gap into false
   confidence.** Point N research/review agents at one subsystem's files and all N inherit that blind
