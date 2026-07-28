@@ -165,6 +165,20 @@ not a swarm of agents — and it is the default for every substantive turn, not 
   year wrong, a cause the checker had explicitly marked unsupported, and a "never found" product that
   had actually been abandoned days after launch, had ALREADY been corrected inside the very JSON I was
   reading from.)
+  - **Corollary — a pipeline can complete GREEN while a stage received placeholder text instead of
+    data. "Run finished, no errors" is not "data flowed."** When authoring code that splices data into
+    strings another consumer will read (workflow scripts injecting JSON into agent prompts, codegen,
+    templating), an escaping slip turns the injection into literal `${...}` text — and nothing errors:
+    the downstream agent gamely analyses the placeholder, verdicts come back well-formed, and the
+    propose→verify chain is structurally disconnected while every status light is green. Two guards:
+    (1) when writing the script, treat every interpolation site as load-bearing and check WHICH need
+    escaping — inconsistent escaping (plain interpolation in one phase, escaped in another) is the
+    tell of guessing; (2) before trusting any downstream verdict, confirm its input CONTAINED the
+    upstream output — a verifier whose result is suspiciously small or generic likely never saw the
+    data. (Case: an analysis workflow — 4 read lenses, 3 verifiers, 1 synth — ran 8/8 green; the
+    verify/synth injections were over-escaped, so all three verifiers "verified" a literal
+    placeholder string and the synthesizer improvised a solo pass. The read results sat intact in the
+    journal; only the final agent's own honesty surfaced the break.)
 - **When a result ships a NUMBER and a verbal "why", check that the why actually GENERATES the
   number — and if they disagree, that disagreement is sitting in your hands, free.** A crisp formal
   argument (pigeonhole, information-theoretic, a complexity bound, "this is structural, not tuning")
