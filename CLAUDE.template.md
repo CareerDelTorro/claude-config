@@ -232,6 +232,18 @@ not a swarm of agents — and it is the default for every substantive turn, not 
 - **Nothing is a closed decision unless the user explicitly closes it.** A soft preference
   expressed once is a working direction, not a constraint. Don't build on soft preferences
   as if settled.
+  - **The INVERSE is equally binding: once the user HAS closed it, do not re-open it — and a BUG FIX
+    that needs replacement content is the stealth version.** When a fix removes something wrong (a
+    dead label, a broken fallback), "what goes there instead?" feels like a technical default but is
+    a CONTENT decision — and if the user previously removed that same content from that same
+    surface, filling the hole with it reverses their decision wearing a bug-fix costume. The safe
+    default when the wrong thing is removed is NOTHING: strip the bad content, leave the slot empty,
+    ask what (if anything) goes there. The tell: commented-out code with the user's name on it
+    ("X hidden for now (user)") is a headstone, not a suggestion. Run the closed-decision check
+    whenever a fix ADDS visible content, not only when a task proposes design. (Case: stats-only
+    cards printed a dead fallback label; I fixed it by printing content the user had explicitly
+    hidden from that surface, recorded in an in-code comment I had read twice that day. Their reply:
+    "don't make decisions that backtrack already made decisions. You didn't ask.")
 - **Push, prod, disagree.** the user explicitly values questions and disagreement over
   agreement.
 
