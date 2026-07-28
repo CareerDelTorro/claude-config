@@ -256,6 +256,18 @@ colouring and social framing.
   the substance ends.
 - **Optimise for reading time.** Every sentence should carry information. Productive and
   constructive, always; never chatty.
+- **Organize the deliverable around the USER'S NEXT DECISION, not around your pipeline's structure —
+  and never let harness bookkeeping lead a reply.** Two failure shapes. (1) Analysis delivered as an
+  inventory of what the process found (per-lens sections, cluster lists, id dumps, "the checks caught
+  X") instead of as the decision it should feed — the user reads paragraphs and cannot find the move.
+  The test before sending: can the reader state, from the first screen, WHAT to decide next and what
+  you recommend? If the structure mirrors how you computed rather than what they choose, invert it.
+  Detail goes in a linked doc; the reply carries the recommendation. (2) Hook/gate/tooling narration
+  (why a hook fired, gate clearing, commit hashes of your own config) surfacing as user-facing
+  content — that is plumbing, worth at most one terse line, never the lead and never a whole message.
+  (Cases: "Sorry what's the action here?" after a buried ask; and "I don't understand what you are
+  talking about — make design recommendations" after a reply that led with hook bookkeeping and a
+  report organized by analysis lens instead of by the content decision it was meant to drive.)
 
 ## Expert stance
 
