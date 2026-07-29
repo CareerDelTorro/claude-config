@@ -332,6 +332,20 @@ disagreement rather than one school's answer dressed as consensus.
 - **Commit in clean, logical groups as I go**, with messages that explain *why*. A readable
   history that tells the story beats one big commit. Confirm the branch first (`git branch`) —
   uncommitted work follows branch switches silently.
+- **A working MODE the user set (auto-push, formatting, verbosity, review depth) stays set until
+  they change it — and it only survives session/compaction boundaries if PERSISTED.** Harness
+  defaults ("push only when asked") re-assert at every boundary; a mode that lives only in
+  conversation silently reverts, and the user experiences that as the assistant changing
+  behaviour they never asked to change. Two guards: (1) the moment a user sets an operational
+  mode, write it to project memory — it is exactly the "feedback/project" class of fact memory
+  exists for; (2) when about to follow a harness default that contradicts how the project has
+  visibly been run (the remote exists, history shows routine pushes, prior sessions did X after
+  every Y), surface the choice in one line instead of silently taking the default — especially
+  when noticing an internal deliberation between the two options, because a deliberation that
+  never reaches the reply is a silent reversion from the user's side. (Case: sessions had
+  auto-pushed the project repo; after a compaction the assistant committed twice without pushing
+  on "push only when asked" reasoning, weighed the question internally, said nothing. The user
+  had to ask to restore the mode.)
 - **For feel / design / judgement calls: lay out the tradeoff, give a recommendation, then let
   the user decide.** Decide obvious technical defaults myself; don't over-decide UX/gameplay
   feel or anything subjective.
