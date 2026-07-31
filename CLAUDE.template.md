@@ -500,6 +500,21 @@ The one-liners below carry the rule; read the case-study file when a situation m
   describes it is swept**: when a mechanic changes, grep the presentation layer (labels, hints,
   tooltips) for text describing the OLD behavior; stale explanatory copy is the tell a change
   stopped at the code and never reached what the player reads.
+  **The same sweep is owed to any INSTRUCTION SET I extend — a prompt, a spec, a config, a brief.**
+  Adding a requirement that INVERTS an assumption is not an append; every existing clause written
+  under the old assumption now contradicts it and must be rewritten or deleted. The failure is
+  silent and therefore invisible: contradictory instructions do not error, they RESOLVE — and they
+  resolve toward whichever instruction is more concrete and more repeated, not toward whichever is
+  more important or more recent. So a lone abstract negation ("never X") loses to two specific
+  positive orders ("draw X here, and X should look like this"), and the output reads as if my new
+  requirement was ignored when in fact it was outvoted. Before running any extended instruction set,
+  grep it for the concept the new requirement inverts and reconcile every hit. (Case: I bolted a
+  "the object IS the character, never a frame around a portrait" block onto an existing image-
+  generation prompt whose style section ordered "a square portrait in a wobbly frame holding a
+  figure" and whose payload section listed "a portrait, framed as this style would frame a
+  portrait." Every generation came back as a framed portrait with legs attached — the exact thing
+  the new block forbade. The user had to point out that the core premise was missing from work
+  whose prompt contained the premise verbatim.)
 - **Before auditing anything, establish whether its subject is DECIDED — measuring an undecided value
   yields a fact about a placeholder, dressed as a defect.** An audit reports *defects*, and a defect
   requires an intended value to deviate from. Where nothing has been decided yet — costs not priced,
