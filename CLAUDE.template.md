@@ -502,6 +502,16 @@ The one-liners below carry the rule; read the case-study file when a situation m
   complaint-family, stop tuning and ask "what single absence would make all these verdicts
   true at once?" — then re-derive from the full model. Repeated "still flat" feedback is data
   about the frame, not the knob.
+- **A command that reports FAILURE is not a command that did nothing — check for partial side
+  effects before retrying, and before diagnosing anything downstream of it.** A script that throws
+  halfway has already run everything above the throw; the tool result says "error", I read that as
+  "no-op", and the retry then runs against dirty state. Two costs, and the second is the expensive
+  one: the retry misbehaves, and I attribute the misbehaviour to the SYSTEM UNDER TEST rather than
+  to my own leftover state — a phantom defect that looks exactly like a real one. So when a call
+  errors: read WHERE it failed, list what ran before that point, and clean up or verify before the
+  next attempt. Prefer making the retry idempotent (destroy-then-create, not create) over trusting
+  the error status. Applies to any partially-applied operation — a migration, a batch edit, a
+  deploy, an editor command.
 - **A validated component is not a validated architecture.** One payoff moment testing well
   doesn't validate the body plan around it — re-test the frame explicitly, especially when one
   piece is confirmed good.
