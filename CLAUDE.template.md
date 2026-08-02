@@ -640,6 +640,20 @@ The one-liners below carry the rule; read the case-study file when a situation m
   that plainly showed the overhang, and only the user caught it. I had been looking for the numeral
   legibility I'd set out to fix — which genuinely did improve — and never asked whether anything else
   had changed.)
+  - **Corollary — when measuring a subject out of pixels, CHECK THE MEASURED EXTENT AGAINST ITS KNOWN
+    SIZE, because an OCCLUDER returns a stable, plausible number that is not about the subject at
+    all.** A colour/threshold scan does not know what it is looking at: if something is drawn in front
+    of the subject, the scan silently reports the OCCLUDER's edge, and because an occluder is usually
+    static that reads as an authoritative "it did not move" — or, worse, its edge moving reads as the
+    subject moving. The number looks like evidence and is evidence about the wrong object. The check
+    costs one line: the subject has a known width/height, so if the measured extent disagrees with it,
+    the measurement is of something else and every conclusion drawn from it is void. Do this BEFORE
+    reporting a pixel measurement as proof a fix landed. (Case: I "verified" an animation fix by
+    scanning the moving object's edge across frames and reported ~194px of travel where a review had
+    measured zero. A later review re-measured with the occluder identified: the edge was clamping to a
+    fixed value because another element was drawn OVER it — my scan had been tracking that element's
+    edge. The tell was in my own data: the object measured 74px wide against its known 92-95px. It had
+    not moved at all, and I had reported it fixed.)
   - **Corollary — a "drop-in" replacement asset must preserve the original's INTRINSIC size.** When I
     author a replacement for an existing sprite/asset, changing its resolution while keeping its
     pixels-per-unit (or DPI, or viewBox) silently rescales its world size and therefore every existing
