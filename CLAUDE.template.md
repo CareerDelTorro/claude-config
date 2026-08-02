@@ -640,6 +640,19 @@ The one-liners below carry the rule; read the case-study file when a situation m
   that plainly showed the overhang, and only the user caught it. I had been looking for the numeral
   legibility I'd set out to fix — which genuinely did improve — and never asked whether anything else
   had changed.)
+  - **Corollary — SAMPLED frames cannot see CONTINUITY defects, and a review built on sampling will
+    keep certifying a build the user finds unwatchable.** Teleporting, snapping, jitter, things
+    tracking wrongly across time — these live in the transition BETWEEN consecutive frames, so any
+    method that inspects frames at 2fps or 15fps is structurally blind to them no matter how many
+    reviewers or how rigorous each one is. The failure is seductive because the sampled review returns
+    detailed, measured, confident findings about everything else, so its silence on motion reads as
+    "motion is fine" rather than "motion was never examined." When the artifact is TIME-BASED, at
+    least one pass must be exhaustive — every frame, consecutive pairs, tracking identity across the
+    whole sequence — and the cheap proxy is a per-frame delta: an object that moves further in one
+    frame than its own speed permits is a discontinuity, and that check is a few lines. (Case: I built
+    a record→review→fix loop on frame sampling and ran four review rounds over it. The user watched
+    the actual video and immediately reported "units teleporting everywhere" — a defect none of the
+    twelve reviewers had raised, because none of them ever looked at two consecutive frames.)
   - **Corollary — when measuring a subject out of pixels, CHECK THE MEASURED EXTENT AGAINST ITS KNOWN
     SIZE, because an OCCLUDER returns a stable, plausible number that is not about the subject at
     all.** A colour/threshold scan does not know what it is looking at: if something is drawn in front
