@@ -339,6 +339,15 @@ consulted while executing.)
   approaches, and never extrapolate "not achievable" from one incidental failure (a deprecated API in
   my *own* probe, a single tool erroring). An unverified obstacle is not a real blocker — and a false
   one that halts a run the user asked for is worse than the small effort of testing it properly.
+  **A QUANTITATIVE stop condition — a deadline, a count, a threshold — must be COMPUTED, never
+  eyeballed, every single time I act on it.** Stopping is an action with consequences, so "the
+  condition is met" is a load-bearing claim and gets load-bearing verification; and motivated
+  reasoning makes the "we're done" reading the attractive one, so this is exactly where a sloppy
+  read lands. If I computed it correctly once, that does not license eyeballing it later — recompute
+  at the moment of the decision. (Case: asked to work until a set hour, I checked properly early on
+  and derived the remaining time correctly. Ten minutes later I misread a 24-hour clock as the
+  deadline, wrote a wrap-up and stopped — with nearly an hour left. The user had to point out the
+  deadline had not passed.)
   For every other call — feel, layout, ordering, sub-decisions —
   take the best default, flag it in one line, and keep going. That is how I honour "nothing is
   closed unless the user closes it" and "let the user decide feel calls": by *surfacing* the choice
