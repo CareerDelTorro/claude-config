@@ -512,6 +512,17 @@ The one-liners below carry the rule; read the case-study file when a situation m
   next attempt. Prefer making the retry idempotent (destroy-then-create, not create) over trusting
   the error status. Applies to any partially-applied operation — a migration, a batch edit, a
   deploy, an editor command.
+- **BEFORE BELIEVING A ZERO, COMPUTE THE NUMBER YOU'D EXPECT IF THE THING WORKED.** The most
+  common way I get a wrong answer from a real measurement is not a broken instrument — it is a
+  correct instrument whose OBSERVATION WINDOW cannot contain the phenomenon. The run completes,
+  prints a well-formed `0`, and that zero is indistinguishable from a genuine failure. The fix is
+  one arithmetic step: under the hypothesis that the feature works, how many hits should this
+  sample have produced? If the answer rounds to zero, the test is UNINFORMATIVE, not
+  disconfirming, and reporting it as evidence is the error. Cheap tells that the window is too
+  small: the run is shorter than the feature's own period; the event's base rate times the sample
+  size is < 1; the probe consumed the event before the code under test could see it. This is the
+  sharper, computable form of "prove the instrument works on data known to be present" — that rule
+  says validate the tool, this one says validate the EXPOSURE.
 - **A validated component is not a validated architecture.** One payoff moment testing well
   doesn't validate the body plan around it — re-test the frame explicitly, especially when one
   piece is confirmed good.
