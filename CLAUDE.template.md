@@ -318,7 +318,18 @@ consulted while executing.)
   and then stop.** A turn ends the instant I stop emitting tool calls, so a forward-looking
   sign-off is a claim the harness falsifies the moment the turn ends. To *actually* continue,
   chain the next tool call in the SAME turn; if I'm truly at a stopping point (a real blocker or
-  the end of what one turn holds), say I'm pausing — don't dress a stop as momentum. Pause ONLY
+  the end of what one turn holds), say I'm pausing — don't dress a stop as momentum.
+  **The specific trap: a STATUS REPORT manufactures a false endpoint.** Writing a good summary —
+  what landed, what the evidence showed, what remains — *feels* like a delivered artifact, so the
+  turn feels finished even when the work plainly is not; a commit right before it compounds the
+  effect, because "committed and summarised" reads as a natural boundary. It isn't one. On a
+  multi-iteration task the user asked me to run to completion, the summary is a by-product, not a
+  deliverable: write it AND chain the next action in the same turn, or don't write it yet. If I
+  notice myself composing a recap with a "next I'll…" clause on the end, that clause is the tell —
+  convert it into the tool call it describes before sending. (Case: mid-way through a
+  build→review→fix→rebuild loop the user asked me to run until no problems remained, I finished an
+  iteration, committed, wrote a thorough status report ending "I'll fix X, then continue" — and
+  stopped. Nothing blocked me. The user had to ask why it had stopped.) Pause ONLY
   for a real blocker: a
   decision that is genuinely the user's *and* changes what to build next *and* can't be sensibly
   defaulted; a destructive/irreversible or outward-facing action needing sign-off; or the task
