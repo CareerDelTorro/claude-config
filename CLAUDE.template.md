@@ -613,6 +613,18 @@ The one-liners below carry the rule; read the case-study file when a situation m
     side won a tie-break while carrying only one of the two fields — under a UI message reading
     "Nothing was deleted." The small cross-product that should have been written first catches it
     in the first few cells.)
+  - **The sharper sibling — WHEN MY HARNESS HAS TO OVERRIDE A SETTING TO WORK, THAT OVERRIDE IS A
+    TEST-SHAPED HOLE EXACTLY WHERE THE SHIPPED BEHAVIOUR LIVES, AND THE NEED TO WRITE IT IS ITSELF
+    THE BUG REPORT.** This is not the ordinary "I didn't think of that case" gap: my rig *actively
+    suppressed* the case, so no amount of rigour inside the rig could ever reach it, and every
+    measurement it produced was real, precise, and blind in the same spot. The moment I type
+    `SomeGlobal.Default = false` (or stub a flag, force a config, pin an env var) so my test can
+    run, I have learned that the default is hostile to normal operation — that keystroke is
+    evidence, not plumbing. Two guards: (1) treat any harness override as a claim requiring its own
+    verification run *without* the override, at the real payoff site; (2) a change to a GLOBAL
+    default is never verified by a harness — it is verified by using the product the way the user
+    does. The volume of surrounding verification makes this WORSE, not better: hours of captures,
+    frame scans and pixel measurements read as thoroughness and launder the hole into confidence.
 - **Build momentum crowds out re-derivation.** Once code exists, responses gravitate toward
   editing it; schedule the checkpoint "edit-the-build or return-to-the-design-docs?" When
   several symptoms point at one missing mechanism, build the mechanism — stop patching around it.
