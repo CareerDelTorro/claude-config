@@ -64,6 +64,22 @@ told the user a game had "no rarity, a flat shop pool" from a stale audit memory
 adding a depth-weighted draw — the code already had a full rarity enum + unlock-depth + scarcity
 weighting. They caught it. The recalled memory was stale; the project had grown past it.)
 
+**A QUERY'S SILENCE ABOUT WHAT IT DIDN'T ASK FOR IS NOT ABSENCE — the scope of the search is not
+the scope of the conclusion.** The sharpest version of the trap below, because it survives a
+*successful* search: you query for X, find X, and then assert the absence of Y — a category the
+query never covered — with the confidence the successful hit gave you. Before writing "there is no
+Y" into a deliverable, check whether any search you ran could have returned a Y. If the filter said
+`image/`, it could not have found a video; if it said `title contains 'screenshot'`, it could not
+have found `combination.mp4`. Re-query for the thing you are about to declare missing, in its own
+terms. (Case: I searched a shared drive for screenshots, found them, and then wrote "b-roll and
+clips do not exist yet" into a press-kit spec as fact. Ten gameplay clips sat in that same drive in
+folders my image-filtered query could never have matched — the single most-requested asset for the
+audience the kit was being built for.) The same applies to declaring a CAPABILITY absent: a correct
+cost calculation is not a test. I computed that a 1.1MB file becomes ~1.5M characters of base64 and
+concluded the download was impractical — the arithmetic was right and the conclusion was wrong,
+because the bytes land in a file on disk, not in context. Estimating a mechanism's *cost* answers a
+different question than "where does the output go"; one real call settles it.
+
 **An absence observed through ONE access path is not an absence — and the user's account of what
 they did outranks your inference from one observation.** "I looked and it isn't there" is a claim
 about your lookup, not about the world. Before concluding that data, a feature or a record does not
