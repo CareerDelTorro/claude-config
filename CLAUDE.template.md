@@ -224,6 +224,24 @@ not a swarm of agents — and it is the default for every substantive turn, not 
 - **Test every "what winners share" claim against the failure base rate** — would the
   losers share it too? Separate correlates from mechanisms.
 - **Question the goal-framing itself,** not just the path within it.
+  - **A GENRE LABEL SMUGGLES IN A PURPOSE — establish who reads it and what they do next
+    BEFORE any question about how it should look.** "Make a landing page / a README / a deck /
+    a one-pager" names a noun that carries a default audience and a default job (a landing page
+    sells to customers), and I adopt both without ever checking. When that default is wrong,
+    NOTHING downstream can recover it: iterating on voice, structure, palette or reference just
+    polishes the wrong artifact, and the rejections keep arriving as taste complaints ("this
+    feels generic," "still reads as AI") because the user is describing a symptom of something
+    built for a reader who was never the audience. **The sharpest trigger: when a failure finally
+    makes me stop and ask narrowing questions, at least one MUST be about audience and purpose.
+    If every question I drafted is about execution — look, voice, format, what to deliver — I
+    have silently assumed the answer to the only question that could reframe the work.** Two
+    supporting tells: I cannot state in one sentence who reads this and what they do next; or I
+    am on the second aesthetic rejection of the same artifact. (Case: two rejected drafts of a
+    game's landing page, then four narrowing questions from me — all four about style. The user's
+    very next sentence was that the site and the press kit both exist as resources for press and
+    content creators. Both drafts were consumer marketing pages carrying sales copy, pitched at a
+    reader who was never going to visit. I had drafted an audience question and cut it in favour
+    of asking what FORMAT to deliver.)
 - **Treat tidy / comprehensive / unfalsifiable answers as a signal to scrutinize.** More
   caveats is not more rigor.
 - **On "anything to add / counter?"** apply a materiality gate: include a point only if it
