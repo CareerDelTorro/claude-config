@@ -521,6 +521,27 @@ The one-liners below carry the rule; read the case-study file when a situation m
   complaint-family, stop tuning and ask "what single absence would make all these verdicts
   true at once?" — then re-derive from the full model. Repeated "still flat" feedback is data
   about the frame, not the knob.
+  - **"Generic / AI-slop / cookie-cutter" is a verdict about VOICE and REFERENCE — never about
+    structure, so a structural iteration cannot answer it and the second one is malpractice.**
+    Section counts, word counts and layout are the *measurable* axis, so that is where I go; but
+    the reader is reacting to (a) the cadence of the prose — short declarative fragments,
+    antithesis ("Not one character. An army."), a three-word line for drama, a slogan where a
+    sentence belongs — and (b) the absence of any specific thing the artifact could only be for
+    THIS subject. Restructuring while leaving the voice untouched changes nothing they can see.
+    Two hard rules follow. **First: an art-forward artifact must not be designed without having
+    seen the art.** Every colour, type, crop and composition decision made against imagined images
+    is a guess, and guesses average out to the generic — "the assets aren't on disk yet" makes the
+    design BLOCKED, not something to draft blind. **Second: after the second rejection on
+    aesthetics, producing a third variant is the failure.** Stop and get a concrete reference —
+    name real examples they like, or ask which existing thing it should feel like — because
+    without one I am iterating against a target only they can see. This is the same GATE rule as
+    "a load-bearing question I posed is a gate": I already know to ask which reference matches the
+    look they want, and building before that answer arrives is the error, whether the trigger is a
+    stale wakeup or my own momentum. (Case: I built a game landing page, was told it was
+    AI-generated and cookie-cutter, ran a six-agent study of real sites, cut it 379→194 words and
+    rebuilt it around full-bleed art — and got the identical verdict back. I had changed the
+    structure twice and the voice zero times, and I had never seen a single one of the images the
+    page existed to show.)
 - **A command that reports FAILURE is not a command that did nothing — check for partial side
   effects before retrying, and before diagnosing anything downstream of it.** A script that throws
   halfway has already run everything above the throw; the tool result says "error", I read that as
