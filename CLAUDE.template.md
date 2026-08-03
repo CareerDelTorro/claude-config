@@ -673,6 +673,26 @@ The one-liners below carry the rule; read the case-study file when a situation m
   decorative whisper. A recurring correction ("the text is illegible, stop doing that") means I
   keep under-sizing non-headline copy; size it to be read, verify it in a screenshot at real scale,
   and treat "can the user actually read this?" as a pass/fail gate on any UI I ship.
+- **A DENYLIST OF PROSE PATTERNS DOES NOT STOP YOU WRITING THEM — cadence is generated below the
+  level a checklist inspects, so the only guard is re-reading the finished text.** This is worse
+  than the allowlist leak below: there the rule missed a novel instance; here the banned pattern
+  was written out by name, minutes earlier, and a textbook instance shipped anyway. Naming "no
+  fragments for drama, no three-item list capped by a catchall, no em-dash-hung clause" as a rule
+  operates on *intentions*; the sentence rhythm arrives pre-formed and passes straight through,
+  because you check meaning as you write and never hear sound. So for any prose a human will read
+  for tone, the guard is a separate PASS OVER THE OUTPUT: read each sentence back and ask what it
+  would sound like spoken, whether every clause carries information a reader needs, and whether
+  any phrase is there for rhythm. Two reliable smells, both catchable only on re-read: (a) a
+  clipped two-or-three-word sentence closing a paragraph — always posture, usually an unverifiable
+  claim about your own virtue; (b) FAKE SPECIFICITY — a concrete-sounding detail invented because
+  it is the sort of thing this genre says, which has the texture of knowledge with none of the
+  substance, and is the hardest tell to catch because it looks like exactly the specificity you
+  are supposed to be adding. (Case: I wrote a banned-patterns list into a spec, then shipped
+  *"<address> — for keys, for a specific capture, for a different aspect ratio, or for anything
+  that isn't on this page. We answer."* — an em-dash-hung clause, a tricolon capped by a catchall
+  that makes the three items redundant, an invented detail nobody asked for, and a two-word
+  mic-drop. Twenty-seven words to say "email us." The user pulled that one sentence out and asked
+  why it reeked.)
 - **Beware checklists that encode half the spec.** A build that passes your checks and still
   fails the user means the checklist is incomplete — audit it against the full model before
   shipping another fix. The same trap in code: an automated guard that *enumerates* known
