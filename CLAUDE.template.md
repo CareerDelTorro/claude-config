@@ -829,6 +829,28 @@ The one-liners below carry the rule; read the case-study file when a situation m
     fixed value because another element was drawn OVER it — my scan had been tracking that element's
     edge. The tell was in my own data: the object measured 74px wide against its known 92-95px. It had
     not moved at all, and I had reported it fixed.)
+  - **Corollary — AN INSTRUMENT THAT SHARES A CONSTANT WITH THE CODE UNDER TEST IS STRUCTURALLY BLIND
+    TO AN ERROR IN THAT CONSTANT, and it fails by AGREEING with the bug.** Writing a probe, I reach for
+    the same symbol/number the implementation uses — it is right there, it is obviously "the" value,
+    and reusing it feels like rigour. But then the measurement is not a check of the code, it is a
+    restatement of it: whatever the code targets, the probe reports as achieved, and the greener the
+    number the more confidently I close the bug. This is worse than a merely wrong measurement, because
+    a wrong one usually looks wrong. **The trigger is unmissable and I must treat it as decisive: my
+    number says fixed and the user says they can still see it.** That disagreement does not mean "look
+    harder at the code" — it LOCALISES the fault to an assumption the probe and the code hold in common,
+    so the next move is to enumerate every constant the probe borrowed and re-derive each one from
+    ground truth (measure the rendered object, query the live system, read the asset), never from the
+    source that is under suspicion. Generalises past pixels to any self-referential check: a schema
+    validator built from the same schema the writer used, a rate limiter tested with its own window
+    constant, a serializer round-tripped through its own encoder. Ground truth has to enter the loop
+    from OUTSIDE the loop. (Case: told two objects visibly overlapped on screen, I derived a contact
+    clamp from a width constant and wrote a probe that scored overlap using that same constant. It
+    reported exactly what the clamp targets, across four rounds of fixes, while the user kept watching
+    one object sit inside the other. The real rendered width was 19% larger — the sprite's own width
+    with a scale factor applied on top, and the constant had dropped the scale factor. The clamp was
+    seating the objects well inside each other and my instrument called that a clean touch. One live
+    read of the renderer's actual bounds settled it in a minute, after a whole session spent chasing
+    code paths that were not the bug.)
   - **Corollary — a "drop-in" replacement asset must preserve the original's INTRINSIC size.** When I
     author a replacement for an existing sprite/asset, changing its resolution while keeping its
     pixels-per-unit (or DPI, or viewBox) silently rescales its world size and therefore every existing
