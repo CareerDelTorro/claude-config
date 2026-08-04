@@ -417,6 +417,32 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
 - **Gate risky changes behind a kill-switch, defaulting to the original behavior.** On a
   working system, experimental changes should be able to ship dark and be A/B'd; nothing
   should be hard to undo.
+- **A DESTRUCTIVE COMMAND MUST NAME AN ABSOLUTE PATH, AND MUST NEVER SIT AFTER `;` IN A CHAIN.**
+  `rm -rf`, `find … -delete`, `git clean -fdx`, `> file`, `Remove-Item -Recurse` — for all of
+  these the target is whatever the CWD happens to be when the line finally runs, and the CWD is
+  the one thing in a shell you do not control reliably. Two rules, both absolute:
+  **(1) Never let a relative path (`.`, `*`, `./x`) be the target.** Resolve the intended
+  directory into a variable, and if you cannot state the full path you are deleting, you are not
+  ready to delete. Better still, assert first — `[ -e "$DIR/.expected-marker" ] || exit 1` — so
+  the command cannot fire in the wrong tree at all.
+  **(2) Never join it with `;` — only `&&`.** `;` runs the next command regardless, so a failed
+  `cd` silently leaves you in the *previous* directory and the delete lands there. `&&` makes the
+  precondition load-bearing. Equally: check that the command creating the target actually
+  succeeded before using it; "the directory should exist by now" is not a check.
+  This compounds with the partial-side-effects rule below — a chain that dies midway leaves the
+  shell somewhere you did not intend, which is exactly when the dangerous line runs.
+  (Case: a `git worktree add "$BUILD"` failed because the disk was full, so `$BUILD` was never
+  created. The next segment was `cd "$BUILD" && … ; find . -maxdepth 1 ! -name . ! -name .git
+  -exec rm -rf {} +`. The `cd` failed, the `;` ran the `find` anyway, and the CWD was still the
+  user's main project checkout — while a SECOND session was actively working in it. It deleted
+  25,000+ tracked files plus every untracked local artifact. Everything committed came back via
+  `git restore` and an index rebuild, hash-verified byte-identical; what did not come back was the
+  other session's uncommitted package manifest change and several gitignored local folders. One
+  `&&` instead of one `;` would have made the whole thing a no-op.)
+- **When disk is the resource, check it before an operation that needs a lot of it.** A full disk
+  turns ordinary commands into partial failures at unpredictable points — and partial failure is
+  the state the rule above exists to survive. Cheap to check, and it converts a mystery into a
+  message.
 - **Commit in clean, logical groups as I go**, with messages that explain *why*. A readable
   history that tells the story beats one big commit. Confirm the branch first (`git branch`) —
   uncommitted work follows branch switches silently.
