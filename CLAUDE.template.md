@@ -815,6 +815,30 @@ The one-liners below carry the rule; read the case-study file when a situation m
     a record→review→fix loop on frame sampling and ran four review rounds over it. The user watched
     the actual video and immediately reported "units teleporting everywhere" — a defect none of the
     twelve reviewers had raised, because none of them ever looked at two consecutive frames.)
+  - **Corollary — AN AGGREGATE OVER A WINDOW CANNOT SEE THE DISTRIBUTION INSIDE IT. Total, min/max,
+    sum and average all discard ORDERING, which is the entire content of anything a human watches.**
+    This survives the fix above: I can read EVERY frame, never sample, and still be blind, because the
+    blindness is in the statistic rather than the sampling rate. "It moved 49% of its width" is true of
+    a smooth half-second glide and equally true of an object that stands frozen for twelve frames and
+    then jumps the whole distance in two — and only the first is a motion a viewer can see. The user is
+    never reporting my aggregate; they are reporting the time-series. So for anything perceived as
+    motion, animation, pacing or responsiveness, the measurement has to BE a profile: print the
+    per-frame series (or at minimum frames-until-first-movement, peak per-frame step, and duration),
+    look at its shape, and state what shape a correct one would have BEFORE reading the result. A
+    strong tell that I am about to make this mistake: my metric is a single scalar and the complaint
+    is about how something LOOKS. A second tell, and the one that should stop me cold: my number says
+    the thing happens and the user says it does not happen AT ALL — "at all" is a claim about
+    perception, and a magnitude that disagrees with it is almost always measuring a real displacement
+    that occurs too fast, too early, or too late to be seen. Related trap when the recording itself is
+    the instrument: a viewport that re-centres on the subject each frame subtracts exactly the motion
+    under test, so lock the crop before recording anything about displacement. (Case: told an object
+    "barely moves", I made its motion a fixed fraction of its own width, measured 49.0% travel against
+    a comparison object's 48.5% and a symmetry ratio of 1.01, and reported it fixed. The reply was that
+    it "doesn't move at all". A per-frame trace showed it motionless for the first twelve frames of
+    every cycle: a global freeze effect fired on the same frame the animation began, and a zero time
+    scale means a zero frame delta, so the animation sat at frame zero and then crossed its whole
+    travel in the two frames after the freeze lifted. The total was honest and the motion did not
+    exist.)
   - **Corollary — when measuring a subject out of pixels, CHECK THE MEASURED EXTENT AGAINST ITS KNOWN
     SIZE, because an OCCLUDER returns a stable, plausible number that is not about the subject at
     all.** A colour/threshold scan does not know what it is looking at: if something is drawn in front
