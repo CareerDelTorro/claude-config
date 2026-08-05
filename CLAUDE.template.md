@@ -64,6 +64,26 @@ told the user a game had "no rarity, a flat shop pool" from a stale audit memory
 adding a depth-weighted draw — the code already had a full rarity enum + unlock-depth + scarcity
 weighting. They caught it. The recalled memory was stale; the project had grown past it.)
 
+**The sharpest instance is an absence claim about YOUR OWN CAPABILITIES. "I can't do X" is the most
+decay-prone sentence you write, because your toolkit is CONFIGURED PER SESSION while your sense of
+it comes from TRAINING.** Skills, MCP servers, deferred tools and installed binaries are enumerated
+in the session context; a prior about what "an AI can't do" is stale by construction and was never
+about *this* harness anyway. So before writing "I can't" / "there's no way for me to" / "that isn't
+something I can read", scan the available-skills and tool lists for the thing you are about to
+declare impossible — it is usually sitting right there, and the check costs one look at context you
+already hold. Two things make this worse than an ordinary absence claim: **(1) the user cannot
+correct what they don't know you skipped** — a wrong fact gets caught, but a capability you silently
+disclaim is a door that just stays shut, and the whole task quietly routes around it; **(2) it is
+exactly the shape of premise that gets INJECTED INTO DELEGATED WORK** as a filter or ranking
+criterion, where N subagents inherit it and hand back confident output built on top of it. The
+correction is to CHECK, not to flip to assuming you can — state the verified capability *and* its
+real boundary. (Case: a multi-agent research workflow was launched with "video-tutorial-only
+documentation is a downgrade — the agent cannot watch videos" written into its ranking criteria. A
+video-watching skill was listed in that same session's skill list and ffmpeg was on PATH; the skill
+exists precisely to extract frames and read them. The user's correction was two words: "yes you
+can." The true boundary was narrower and stating it would have been correct: you can SEE video, you
+cannot HEAR it unless a transcriber is installed.)
+
 **A QUERY'S SILENCE ABOUT WHAT IT DIDN'T ASK FOR IS NOT ABSENCE — the scope of the search is not
 the scope of the conclusion.** The sharpest version of the trap below, because it survives a
 *successful* search: you query for X, find X, and then assert the absence of Y — a category the
