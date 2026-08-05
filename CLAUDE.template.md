@@ -148,6 +148,34 @@ of eight units and that one is a single hero laden with items, i.e. shaped like 
 entirely. The disconfirming word was sitting in the sentence I was paraphrasing, and I had labelled
 the row load-bearing while verifying it least. He caught it in one line.)
 
+**AN ABSENCE CAN BE A DECISION - and the highest-yield instance is A REGISTRY THAT HOLDS FEWER
+ENTRIES THAN THERE ARE FILES ON DISK.** "N assets exist, only M are registered" is the single most
+common SHAPE of a deliberate retirement, and it is the shape that most looks like an oversight,
+because the leftover files are still sitting right there - so "someone forgot to add them" is the
+obvious story, and you can verify the absence is REAL in one command, which *feels* like
+verification. It is not: confirming a gap exists answers a different question from whether the gap
+is INTENDED. Registries, feature flags, allowlists and config lists are precisely where teams retire
+things (drop it from the list, keep the file), so a diff against one is a decision log, not a defect
+list. **Two cheap checks, both to be run BEFORE writing the word "bug":** (1) `git log -S<id> --
+<the registry file>` - the commit that REMOVED an entry almost always says why, per entry; (2) grep
+the memory/docs for that entry's name. The asymmetry is what makes this worth a rule: reporting a
+real bug late costs a little, while reporting a deliberate decision as a bug costs the user's trust
+in every finding you file, and invites you to "fix" the decision back.
+The compounding tell, and the decisive one: **you are about to file a finding that CONTRADICTS A
+RECORD YOU ALREADY HOLD.** A memory in context, a doc you have read, a decision you wrote down
+yourself - when a fresh observation disagrees with an existing record, the record wins until you
+have disproved it, because it was written with context you no longer have. (Case: while adding four
+new entries to a game's rewards registry, I noticed 33 reward assets on disk against 29 registered,
+verified each of the four absences individually, and reported them as a bug - leading with the
+highest-value one to make the case land. All four had been retired deliberately in a single commit
+whose message named each with its reason: two were uncompletable because the mechanic feeding them
+was unwired, one duplicated another achievement, one was superseded by a per-character variant.
+Worse, my own memory file's one-line description read "...retired as collateral by decision - don't
+fix" and was loaded in that very session's context, and its body said a future audit flagging this
+is "known and intentional - not a regression to auto-fix." The user's reply was "do you remember we
+left those out deliberately? Try recall." One `git log -S` would have settled it before I wrote a
+word.)
+
 **WHEN A REPORTED SYMPTOM'S ROOT CAUSE IS A DOCUMENTED, INTENDED MECHANISM, THE REPORT IS ABOUT THE
 CONSEQUENCE, NOT THE MECHANISM. Diagnosing correctly does not license removing what you found.** This
 is about code that works exactly as designed and produces an outcome that LOOKS broken. The diagnosis
