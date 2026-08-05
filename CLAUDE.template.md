@@ -718,6 +718,21 @@ The one-liners below carry the rule; read the case-study file when a situation m
   reported alone.) This is the grading counterpart to "a placeholder is not the blueprint": that rule
   says don't infer the design TARGET from the scaffold; this one says don't grade the SCAFFOLD against
   a target nobody has set.
+  **The repeat offence, and the distinction that stops it: a value measurement can be a legitimate
+  INSTRUMENT while being an illegitimate FINDING.** This rule gets broken again precisely when the
+  measurement becomes genuinely useful — re-running a balance sweep after each change as a REGRESSION
+  check ("did my edit move something it had no business moving?") is a fine use, and then reporting the
+  table as an evaluation ("this one is dominant, that one is dead") is the banned one. Having a good
+  reason to RUN it is not a reason to REPORT it. The test: am I citing this number because it flags a
+  DEFECT — a value moved that my change should not have moved, an outcome contradicts a stated rule — or
+  because it grades a subject nobody has tuned yet? If the latter it belongs in a doc, not in the reply,
+  and never in the headline. The tell is that the most prominent section of my summary is a table of
+  numbers the user has already told me are placeholders. (Case: told plainly that nothing was balanced
+  yet and asked why it was being judged, I recorded the lesson — then led three separate reports with
+  win-rate tables, until: "let's not think too much about balancing and which mechanics win. We can use
+  it for implementation and bug testing, but I don't care about the balance right now, purely perfection
+  of execution." The correct use of the instrument was named in the same breath as the rejection of my
+  use of it.)
 - **Scope the fix to the behavior the user objected to — don't tear out the surrounding system.**
   A complaint about how a feature *behaves* is a request to adjust the behavior, NOT to delete the
   feature. When a correction is ambiguous between "adjust this one behavior" and "remove this whole
