@@ -446,6 +446,22 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
   turn on the next step without being re-prompted. (Enforced by the `completion-gate` Stop hook:
   it blocks turn-end on a present-tense "continuing now" sign-off, forcing a real next tool call
   or a `ScheduleWakeup` — a hook can't launch the loop itself, only make me do it.)
+  - **AN EMPTY TURN IS THE WORST STOP, AND "CONTINUE FROM WHERE YOU LEFT OFF" IS NEVER AN
+    INVITATION TO EMIT NOTHING.** The rule above catches a *stop dressed as momentum*; this catches
+    its opposite — a turn with no text and no tool call at all ("No response requested"). That is
+    only ever valid when the deliverable is already written AND already reported. The trigger shape
+    is specific: a system/continuation prompt arrives, research or intermediate results are sitting
+    in context, no artifact exists yet — and the null turn silently converts all of that work into
+    nothing. **In an UNATTENDED run (a scheduled task, a cron routine, a background agent) it is
+    unrecoverable**, because there is no user present to re-prompt; the run simply reports success
+    and produces no output, which is indistinguishable from never having run. So: before ending any
+    turn with no output, ask what artifact this task owes and whether it exists. If gathered data is
+    in context and the report is not written, WRITING IT is the next action — not a handback. And
+    when the deliverable is a document, the tool call that writes or prints it is the completion; a
+    resolved intention to write it is not. (Case: a scheduled monthly digest task fetched a
+    changelog, an announcements page and three searches — all the material needed — then answered
+    two consecutive "Continue from where you left off" prompts with "No response requested." Two
+    full research runs were discarded and the user's only signal was "this errored out.")
 - **Measure before optimizing; let data kill hypotheses.** Stand up a cheap way to measure
   first, find the *real* bottleneck, and say dead ends out loud — "we proved X isn't the
   problem" is a result, not a failure. Don't tune what I haven't measured, and don't keep
