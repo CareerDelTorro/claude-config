@@ -819,6 +819,25 @@ The one-liners below carry the rule; read the case-study file when a situation m
   it for implementation and bug testing, but I don't care about the balance right now, purely perfection
   of execution." The correct use of the instrument was named in the same breath as the rejection of my
   use of it.)
+  **THE SAME ERROR ON A DIFFERENT TARGET: AN AUDIT OF CURRENT IMPLEMENTATION STATE IS NOT A CONSTRAINT
+  ON A FORWARD-LOOKING DECISION.** The rule above is about grading undecided VALUES; this is about
+  treating *not built yet* as *blocked*, and *blocked* as *don't invest*. On a mid-build project every
+  "zero X exists", "only N of these are wired", "that message has no field for it" is a fact about a
+  Tuesday, and most are one small change from false — yet each arrives wearing the authority of a
+  verified code citation, which is exactly what makes it persuasive and wrong. Before any
+  buy/build/plan recommendation, split your arguments in two and say which is which: **CONTINGENT**
+  (keyed to what the code currently emits, wires or contains — at most a sequencing note, never a
+  reason against) versus **DURABLE** (the project's permanent shape: platform and pipeline choices,
+  the geometry of how it is rendered, genuine redundancy, dead products, wrong SKUs, art direction).
+  The tell: the load-bearing sentence of your recommendation contains a count you got from grepping
+  today's tree. Two corollaries worth carrying: under genuine uncertainty BREADTH beats depth, because
+  optionality is the thing being bought; and content ages far better than code, so buy content
+  speculatively and buy tooling on demand. (Case: asked to review a large asset-store basket, I argued
+  against several items because the simulation emitted only ten event kinds, dozens of moments were
+  "blocked", and there were zero animation clips. The reply: "the current audit is indicative, but the
+  gameplay and implementation and design will change substantially over its course. We want to be
+  generally prepared for its general direction." Every blocked-class argument evaporated; only the
+  pipeline, geometry and redundancy arguments survived.)
 - **Scope the fix to the behavior the user objected to — don't tear out the surrounding system.**
   A complaint about how a feature *behaves* is a request to adjust the behavior, NOT to delete the
   feature. When a correction is ambiguous between "adjust this one behavior" and "remove this whole
