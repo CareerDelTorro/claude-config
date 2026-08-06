@@ -84,6 +84,16 @@ exists precisely to extract frames and read them. The user's correction was two 
 can." The true boundary was narrower and stating it would have been correct: you can SEE video, you
 cannot HEAR it unless a transcriber is installed.)
 
+**The RESTATEMENT of a set you previously enumerated is itself a completeness claim — diff it
+against the original, member by member.** When merging, reorganizing, or mapping an earlier list of
+yours (review-panel seats, features, work items, test suites) into a new structure, every member of
+the original must be visibly PLACED or visibly RETIRED; an unplaced member reads as silently
+dropped, and the user has to spend a turn auditing you to find out. The check is arithmetic — N
+members in, N accounted for — and it costs one count. (Case: merging an 8-instrument review-panel
+roster into the user's 3 stakeholder seats, I placed six and never mentioned the other two; the
+user's next message had to ask whether their framing had replaced mine. The mapping was correct;
+the unaccounted remainder made it unverifiable at a glance.)
+
 **A QUERY'S SILENCE ABOUT WHAT IT DIDN'T ASK FOR IS NOT ABSENCE — the scope of the search is not
 the scope of the conclusion.** The sharpest version of the trap below, because it survives a
 *successful* search: you query for X, find X, and then assert the absence of Y — a category the
