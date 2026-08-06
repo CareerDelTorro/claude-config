@@ -938,6 +938,25 @@ The one-liners below carry the rule; read the case-study file when a situation m
   field at all; every one was still on screen the whole time. I had wired exactly this pipeline for a
   different flag an hour earlier, which is why it felt done. He found it by looking at his own screen
   and asking why one specific item was still there.)
+  - **The mirror image, and it survives having a reader: WRITING A PROPERTY IS NOT OWNING IT. If you
+    set a value and then hand the object to a system that also writes that value, the last writer
+    wins -- and the last writer is almost always the animation, the layout pass or the update loop,
+    not your setup code.** The failure is invisible at the call site: your line is right there in the
+    diff, it compiles, nothing errors -- the value is simply reassigned a frame later, so you report
+    the behaviour as fixed when it was never once in effect. **The tell is a two-step of the form
+    `obj.X = v; obj.StartSomething();`** -- the moment you write those next to each other, go read
+    what StartSomething does to X. The fix is nearly always to invert control: make the animator ASK
+    (a nullable field it falls back from) rather than have the caller write a value the animator will
+    overwrite. Same discipline as the flag rule above -- exercise the path, do not trust the write --
+    but here the check is *who else writes this*, not *who reads it*. (Case: I set a sprite's sorting
+    order so a falling object would pass in front of newly spawned ones, then called the method that
+    starts its fall; that coroutine assigns the same sorting group an absolute order after its first
+    yield. Every object spent its whole fall behind the things it was supposed to cross in front of,
+    while a sibling that never entered that coroutine did it correctly -- one feature, two opposite
+    behaviours. I had already shipped a report saying it worked, and an eight-line comment above it
+    described behaviour the code never produced. The same session had ALREADY produced the identical
+    bug in the other direction: an entrance animation restoring a hardcoded order over the one the
+    view had deliberately assigned. Twice in one session is the signal that it is structural.)
 - **Verify UI with pixels, not DOM reads — and at the PAYOFF site, not just where you set it.**
   `textContent` existing ≠ visible (zero-height, behind overlays, off-viewport); screenshot and
   look before disputing a reported visual bug. When a feature is CONFIGURED on one stage and PAYS
