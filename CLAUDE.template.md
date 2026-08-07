@@ -1004,6 +1004,28 @@ The one-liners below carry the rule; read the case-study file when a situation m
   melee; the user's real case — melee vs a far-back archer — still broke, because a fixed clash is a
   *proxy* for the target. "Walk up to the target" must be target-RELATIVE, not a fixed point; and the
   test must be the reported case, not the neighbour.)
+- **AN UPGRADE REQUEST'S FIRST GATE IS THE DIFFERENCE, JUDGED AT THE USER'S OWN VIEWING CONDITIONS —
+  1:1 scale, real speed, in motion. A gate battery where every test fails only on EXCESS and none
+  fails on INSUFFICIENCY ratchets the work into invisibility.** When the ask is a step-change
+  ("really pretty", "superb", "make this the benchmark"), the primary acceptance test is: put
+  before and after side by side at the size and speed the user actually experiences, and ask
+  whether a stranger spots the change in two seconds. Every quality gate I naturally build —
+  budget ceilings, legibility, no-noise, no-regression — fails only when the effect is too LOUD,
+  so each tuning round under those gates only ever turns the work DOWN; nothing in the battery
+  can even detect "too subtle to justify existing." Two mechanisms compound it: (1) verifying
+  from ZOOMED crops — a 2-3x enlargement inflates a subtle effect into a visible one, so every
+  still I judged looked better than what the user sees at arm's length; (2) importing an intensity
+  ceiling from a doc written for a different purpose and letting it bind over the live ask — an
+  explicit "make this moment the showcase" RE-RATES that moment's budget, and keeping the old cap
+  guarantees delivering "tasteful and restrained" against a brief that said "wow." Extra tell: if
+  the element that dominates the composition's pixels is one I deliberately kept unchanged, the
+  result WILL read as unchanged, whatever I layered around it. (Case: asked for a "really pretty,
+  satisfying" game VFX upgrade with a AAA reference video as the bar, I kept the existing core
+  element untouched, tuned all new light to a conservative ceiling from an intensity-budget doc,
+  verified via enlarged crops of stills, and passed my own gates — squint-test, luminance match,
+  no neighbour pollution. The verdict: "really bad, looks almost exactly like the old version,
+  I can't actually tell the difference." Every gate had passed; none measured the one dimension
+  the request was about.)
 - **A screenshot only verifies what I LOOK AT — diff against the before-shot at identical framing, and
   ask "what ELSE moved?"** Taking the screenshot is necessary but not sufficient: the failure is
   looking at the new image, confirming the property I set out to improve, and declaring success while a
