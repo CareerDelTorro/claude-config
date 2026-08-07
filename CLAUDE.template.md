@@ -1068,6 +1068,23 @@ The one-liners below carry the rule; read the case-study file when a situation m
     fixed value because another element was drawn OVER it — my scan had been tracking that element's
     edge. The tell was in my own data: the object measured 74px wide against its known 92-95px. It had
     not moved at all, and I had reported it fixed.)
+    **THE DEGENERATE CASE, AND THE ONE I ACTUALLY REACH FOR: A SCRIPT THAT RE-IMPLEMENTS THE ALGORITHM
+    UNDER TEST IS NOT A VERIFICATION, IT IS A RESTATEMENT.** Sharing one constant blinds a probe to that
+    constant; sharing the whole algorithm blinds it to EVERYTHING — it cannot detect that the shipped code
+    fails to match my design, that the call site never fires, that a premise about the surrounding data is
+    false, or that the design itself is wrong. It can only report that my design is self-consistent, which
+    was never in doubt. And it is seductive in a way a lazy check is not: writing a second implementation
+    *feels* like extra rigour, it emits a precise table, and I then publish "fixed" under numbers that were
+    guaranteed to come out right. **The trigger is mechanical: if my verifier and my implementation were
+    written from the same understanding in the same session, it has verified nothing.** Ground truth must
+    enter from outside — run the real thing, read the real state, look at the real pixels. A replica is
+    fine for exploring a design BEFORE building it; it is never the evidence that the build works. (Case:
+    I changed how on-screen entities were spaced so a crowded group would spread out, then "verified" it
+    with a script that re-implemented the same two-pass placement I had just written in the application
+    language. Clean table, four scenarios, the anchor entity provably holding its ground — and I reported
+    it fixed without ever launching the app. The user's next message was that it still did not work. Two
+    hypotheses I could have tested against the running program in seconds were sitting untested behind a
+    script that agreed with me.)
   - **Corollary — a "drop-in" replacement asset must preserve the original's INTRINSIC size.** When I
     author a replacement for an existing sprite/asset, changing its resolution while keeping its
     pixels-per-unit (or DPI, or viewBox) silently rescales its world size and therefore every existing
