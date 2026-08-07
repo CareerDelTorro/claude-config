@@ -128,6 +128,18 @@ disk search was a plain-string grep over Snappy-compressed LevelDB blocks, which
 found it under any circumstances. I treated that false negative as corroboration. Writing a real
 SSTable reader recovered everything intact; validating the reader first, against data known to be
 present, is what exposed both mistakes.)
+**The pipeline form: in a producer→consumer chain, stale CONSUMER artifacts do not locate the fault
+in the PRODUCER — check the HANDOFF marker between the stages before declaring which stage died.**
+When stage B writes the logs/outputs you are watching and stage A does the work, silence in B's
+artifacts is evidence only that *B never ran*; A may have completed long ago, with its completion
+marker sitting on disk unexamined. Diagnosing "A died" from B's staleness — and then publishing a
+mechanism story for A's death — is inventing a failure in the wrong stage. One direct look at the
+A→B handoff artifact settles which side of the boundary broke, and it is always cheaper than the
+wrong fix. (Case: a long-running capture batch was declared dead — log stale for an hour, zero new
+outputs, host process idle. The batch had COMPLETED in minutes; its DONE marker sat on disk the
+whole time; the agent that writes every artifact being watched had failed to wake, so
+post-processing never ran. Only consumer-side outputs were checked — one directory listing of the
+handoff location would have flipped the diagnosis.)
 
 This applies beyond code to any **external best-practice or "how the world works" claim** —
 how a platform behaves, what an audience rewards, "the rule" in a craft or field. These have
