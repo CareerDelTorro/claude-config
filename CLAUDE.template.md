@@ -1163,6 +1163,18 @@ The one-liners below carry the rule; read the case-study file when a situation m
   option in the same menu was equally "free" and obviously fine, and losing means you get nothing —
   opportunity cost. What survived was one narrow tuning note, not the systemic blocker I had written
   into the spec.)
+  **THE INVERSE MANIFESTATION, which fired within the hour: over-GATING.** Same root — an option
+  judged standalone — but the symptom flips from "this is broken, block the class" to "this could
+  no-op, so add a precondition." An option being useless TO THIS USER RIGHT NOW is not a defect in a
+  pick-one-of-N: they take another one, and the miss is itself information (it prices holding a
+  spare, and it teaches the system). Distinguish **structurally impossible** (the state it reads
+  cannot exist yet — a counter at zero before anything could increment it) from **merely
+  unsatisfied** (they happen not to own the input). Gate only the first; the second is a normal
+  outcome and gating it is content nobody ever sees. The tell: I was asked for a rule that minimises
+  restrictions and then produced a TABLE of them. (Case: told "everything goes... I want to minimise
+  such restrictions", I returned seven preconditions, five of which were pure inventory checks. The
+  correction: "This is too calculative and restrictive. If you don't have one, you just miss out.
+  The point is not to make these accessible. The point is to remove completely inaccessible ones.")
 
 **Unity & process**
 - **Config-as-asset beats code defaults.** The serialized asset/instance is what ships, not
