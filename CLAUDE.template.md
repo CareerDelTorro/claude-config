@@ -233,6 +233,24 @@ an input to other work. (Case: from a tween call `DOPunchRotation(vec, 100f, 5, 
 gloss into a design-panel prompt as fact. The real signature is `(punch, duration, vibrato,
 elasticity)` — a 100-SECOND tween with vibrato 5, and the actual defect was a different call.)
 
+**The same trap in PROSE: A TERSE LABEL FROM A STATUS NOTE OR MEMORY IS NOT A SPEC — it names that
+a system exists, not its shape, and I fill the gap with whatever shape the label's wording
+suggests.** A short progress-note phrase naming a feature is exactly as underspecified as a bare
+numeric literal: every plausible mechanical shape sounds equally at home behind it, so I pick the
+one that fits the sentence I'm already writing, then build a specific, load-bearing claim on top of
+it as if the label had told me that. The tell is the same as the numeric case: I'm about to name a
+specific mechanical detail (who pays, how often, whether it can be skipped) that the label itself
+never stated — that's the moment to check the system before continuing, not after the user flags
+it. This bites hardest in exactly the sessions where it looks safest: a memory or status note I
+trust, about a system I never actually opened. (Case: a status note read "recurring cost,
+pay-or-leave" for a game feature — four words, written by a prior instance of me. I turned that
+into a brainstormed design proposal, "skip your next payment," treating it as a general recurring
+cost the player pays every round. The actual implementation was a property some individual game
+objects carried, not a blanket player-facing payment at all, so "skip it" didn't parse. One search
+of the actual code would have settled it before the idea ever reached the user — and several other
+proposals in that same brainstorm were sourced from the same terse note, carrying the identical
+unverified risk without getting caught.)
+
 **A SIMILARITY claim must name the AXIS. "Same as" / "exactly like" / "identical structure" with no
 axis named is where the error hides** — nothing is the same as anything; things match on some axes
 and differ on others, and an unqualified "same" silently asserts a match on ALL of them. When
