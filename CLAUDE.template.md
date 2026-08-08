@@ -1145,6 +1145,24 @@ The one-liners below carry the rule; read the case-study file when a situation m
   genius streak — audit the series (system count vs. phase, untested layers, redundant channels).
 - **Scheduling language is not disagreement.** "Build it after X" concedes the design question
   while sounding disciplined; if the position is "may not deserve building," say that.
+- **A TEST DEFINED OVER A CHOICE SET CANNOT BE APPLIED TO ONE MEMBER OF IT — and inside a
+  pick-one-of-N, NOTHING is free, because the unchosen alternatives ARE the price.** When you hold a
+  criterion about a *structure* (is this a real decision? does it discriminate?) and then evaluate a
+  single option against it, you strip out exactly the thing that supplies the cost, and a perfectly
+  good option reads as broken. The tell is that you are about to write "free", "no downside", "no
+  stake", or "everyone takes it" about something the user picks FROM A MENU — opportunity cost is
+  the stake, and the losing branch of a gamble is a second stake (the slot is spent and nothing is
+  returned, while the guaranteed option beside it was declined). Before declaring a missing-system
+  problem, check whether the surrounding structure already prices it; the fix is usually a tuning
+  requirement, not new plumbing. Generalises past game design to any option-in-a-portfolio
+  judgement — a feature evaluated without what it displaces, a spend judged without the alternative
+  spend. (Case: I claimed a whole class of borrowed design ideas was blocked, because their stake
+  was an activity that cost the player no resources, so "everyone takes it, the design test fails
+  outright." But the options were offered three at a time, one per category — so taking that one
+  forfeited a guaranteed reward, and failing at it returned nothing. The user's correction: another
+  option in the same menu was equally "free" and obviously fine, and losing means you get nothing —
+  opportunity cost. What survived was one narrow tuning note, not the systemic blocker I had written
+  into the spec.)
 
 **Unity & process**
 - **Config-as-asset beats code defaults.** The serialized asset/instance is what ships, not
