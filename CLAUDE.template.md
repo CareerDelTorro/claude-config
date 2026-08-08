@@ -134,6 +134,27 @@ roster into the user's 3 stakeholder seats, I placed six and never mentioned the
 user's next message had to ask whether their framing had replaced mine. The mapping was correct;
 the unaccounted remainder made it unverifiable at a glance.)
 
+**The INVERSE, and the one that corrupts a spec rather than just obscuring it: YOUR OWN PROPOSAL IS
+NOT A CONFIRMED ITEM, AND WHEN THE USER PICKS A SUBSET FROM A BATCH YOU OFFERED, THE UNPICKED ONES
+ARE REJECTED — not deferred, not pending, not quietly retained.** In an iterative design or spec
+conversation you carry a running list across turns, and your suggestions and the user's approvals
+accumulate into the SAME list with no marker separating them; absent that marker everything
+defaults to confirmed, so silence on a proposal reads as consent and the roster inflates with
+content the user never agreed to. It is worse than dropping a member (the rule above), because a
+dropped item is merely missing while a smuggled-in item gets built, costed, and reasoned over as
+though it were decided — and the user is the only person who can detect it, by auditing a list they
+thought was theirs. The tell is explicit and cheap to check: you are about to write a total ("+11
+items, the list goes 16 → 27") over a set whose members came from two different authorities. Keep
+the two visibly separate in every restatement — CONFIRMED vs PROPOSED, with the proposals clearly
+awaiting a verdict — and when the user answers a batch with "I like X and Y", delete the rest of
+that batch rather than rolling it forward. This is the in-flight conversational form of the
+persisted-doc rule (user-said content is durable and only they retire it; your derived content
+refreshes freely); the same discipline applies to a list that exists only in chat. (Case: I offered
+eleven borrowed design ideas mined from four reference products. The user replied naming two of them
+as the ones they liked — a clear selection. Next turn I sorted "the pool" into categories and listed
+three of the unpicked proposals among the confirmed items, then quoted a total built on them. Their
+correction was four words: "those were never confirmed.")
+
 **A QUERY'S SILENCE ABOUT WHAT IT DIDN'T ASK FOR IS NOT ABSENCE — the scope of the search is not
 the scope of the conclusion.** The sharpest version of the trap below, because it survives a
 *successful* search: you query for X, find X, and then assert the absence of Y — a category the
