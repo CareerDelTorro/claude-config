@@ -399,6 +399,24 @@ not a swarm of agents — and it is the default for every substantive turn, not 
   agents were scoped to one subsystem's files and none read the entry-point screen, so the fleet
   missed that the app ALREADY offered that exact mechanic at start-up — the user wanted it upgraded,
   not rebuilt.)
+  **FIRED AGAIN, SAME SHAPE — so the principle needs a MECHANICAL trigger, not just a resolution to
+  sweep.** The trigger is the EXCLUSION LIST. When a fan-out is told "don't propose things that
+  already exist, here is the list," that list is the only thing standing between you and a
+  build-what-we-already-have recommendation — and it is bounded by the sub-domain you happen to be
+  working in, while the PRODUCT is not. A list of "the N confirmed items in this subsystem" stops
+  duplicate items correctly and says nothing about core mechanics, screens, or loops outside it, so
+  the agents propose one back wearing the authority of the whole fleet. Two fixes, both cheap:
+  (1) write the exclusion list from the PRODUCT, not from the working set — name the existing
+  screens and core loops, not just the items in the current backlog; (2) on relay, check each "this
+  is new" claim against the existing system INDIVIDUALLY — a general sweep is what I resolved to do
+  last time and it did not fire, because a polished list of 22 candidates does not feel like it
+  needs auditing item by item. Sharpest tell: the recommendation's own justification praises how
+  well it fits the theme. A thing that fits the theme unusually well is a thing the designer
+  probably already built. (Case: a 13-agent study recommended a feature and I relayed it as "the
+  best theme-mechanic marriage available." It was the product's existing end-of-round loop, already
+  implemented in a screen I had edited that same session. The agents had a text brief, not the
+  codebase, so they could not have known; I could have. The user's reply: "This is a core mechanic
+  that happens at the end of every fight, are you even paying attention?")
 
 ## Reasoning protocol (the working contract — applies everywhere)
 
