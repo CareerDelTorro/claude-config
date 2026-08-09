@@ -155,6 +155,22 @@ as the ones they liked — a clear selection. Next turn I sorted "the pool" into
 three of the unpicked proposals among the confirmed items, then quoted a total built on them. Their
 correction was four words: "those were never confirmed.")
 
+**A TERSE FACTUAL CORRECTION IS NOT AN ARGUMENT — do not infer the position behind it and then
+rebut the position.** When the user drops a short correction ("doesn't X have Y?", "isn't that
+actually Z?"), the reflex is to reconstruct the case they must be building, evaluate THAT, and
+report a verdict on it. But the reconstruction is yours, so the verdict lands on a claim they never
+made — which reads as being misrepresented and then argued with, and it buries the one thing they
+actually said. The tell is unmissable once looked for: you are about to write "your hypothesis /
+point / concern doesn't hold" about a proposition that appears nowhere in their words. Answer the
+correction they made; if a downstream consequence occurs to you, offer it as YOUR inference in your
+own name ("if that's right it might also mean…"), never as their argument. Same root as the
+confirmed-vs-proposed rule above — your content and their content collapsing into one voice — but on
+reasoning rather than on lists. (Case: told "you might be wrong, doesn't X come in four difficulty
+tiers?", I inferred the user was arguing a database count was inflated by tier variants, researched
+that, and replied "your hypothesis doesn't seem to hold." They had made no claim about the count at
+all — they were correcting my description of the structure, and they were right. Their reply was two
+words: "what hypothesis?")
+
 **A QUERY'S SILENCE ABOUT WHAT IT DIDN'T ASK FOR IS NOT ABSENCE — the scope of the search is not
 the scope of the conclusion.** The sharpest version of the trap below, because it survives a
 *successful* search: you query for X, find X, and then assert the absence of Y — a category the
