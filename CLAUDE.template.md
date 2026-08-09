@@ -1163,6 +1163,22 @@ The one-liners below carry the rule; read the case-study file when a situation m
   genius streak — audit the series (system count vs. phase, untested layers, redundant channels).
 - **Scheduling language is not disagreement.** "Build it after X" concedes the design question
   while sounding disciplined; if the position is "may not deserve building," say that.
+- **"MORE IN THAT DIRECTION" AFTER A WELL-RECEIVED ITEM ALMOST ALWAYS MEANS THE QUALITY, NOT THE
+  MECHANISM — and new items must be POWER-EQUIVALENT to the ones they sit beside.** Two failures
+  that arrive together. (1) You latch onto the *shape* of the thing they liked and generate variants
+  of it; but variants compete with each other for one slot, so four of them is not four ideas, it is
+  one idea and three redundancies. What they wanted was other things that clear the same *bar* — the
+  user's own framing: "eating a tasty strawberry and doing a skydive [are] the same direction, they
+  both feel good in a unique way." When the ask is ambiguous between form and quality, default to
+  QUALITY; only cluster on mechanism when they named the mechanism. (2) Freed from the mechanism you
+  drift upward in scope, proposing elaborate multi-step systems next to items whose peers are one
+  line long. Before proposing into an existing set, read the set's actual power/complexity band and
+  match it — anything outside the band has to be explicitly labelled as the exception, not smuggled
+  in as a peer. (Case: asked for "more unique items, maybe in a similar direction" right after one
+  landed well, I returned four more variations on that same mechanism, each a mini-system. The
+  reply: "it's all drifting... I meant by the feeling of interesting [ones] ... also try to keep
+  these equivalent in intents and purposes of the rest of the pool — unless we label one rare they
+  are supposed to compete with the rest of the pool.")
 - **A TEST DEFINED OVER A CHOICE SET CANNOT BE APPLIED TO ONE MEMBER OF IT — and inside a
   pick-one-of-N, NOTHING is free, because the unchosen alternatives ARE the price.** When you hold a
   criterion about a *structure* (is this a real decision? does it discriminate?) and then evaluate a
