@@ -64,6 +64,25 @@ told the user a game had "no rarity, a flat shop pool" from a stale audit memory
 adding a depth-weighted draw — the code already had a full rarity enum + unlock-depth + scarcity
 weighting. They caught it. The recalled memory was stale; the project had grown past it.)
 
+**A PROBE THAT RETURNS THE SAME NULL FOR EVERY MEMBER OF A SET HAS FAILED. N-of-N identical
+negatives is the signature of a BROKEN QUERY, not of a discovered universal absence** - real
+populations are heterogeneous, so "all nine came back empty" means the path or pattern is wrong,
+every time. The tell is free and arrives before you write a word: you are looking at a result
+column that is uniformly blank. Retry by a different route (find the directory first, then list it)
+before drawing any conclusion at all.
+**The compounding half is what makes it expensive: when the probe comes back empty you do not stop,
+you substitute INFERENCE FROM NAMES - and names are the single worst source for mechanics.** A
+codebase's identifiers are chosen for archetype or history, not behaviour, so a name-derived
+analysis reads as researched while being pure guesswork, and every downstream recommendation
+inherits it. If the thing you are about to characterise has a data file, open the data file; a name
+tells you what something is CALLED. (Case: asked to brainstorm a new unit for a game, I ran a loop
+listing each of nine units' attack assets, got nine blank lines because I had guessed the wrong
+directory, and proceeded anyway. I then told the user his game had "nothing that controls enemies"
+and "no healer", and proposed both as the top ideas. The real assets: the shield unit carries
+knockback plus a stun chance and duration, the mage applies frost, two more units knock back, and
+the bard has a healing amount and no damage at all - it IS the healer. Two corrections in
+consecutive messages. I also missed an entire elemental damage axis sitting in the same files.)
+
 **The sharpest instance is an absence claim about YOUR OWN CAPABILITIES. "I can't do X" is the most
 decay-prone sentence you write, because your toolkit is CONFIGURED PER SESSION while your sense of
 it comes from TRAINING.** Skills, MCP servers, deferred tools and installed binaries are enumerated
