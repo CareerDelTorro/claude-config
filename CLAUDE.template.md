@@ -545,6 +545,17 @@ colouring and social framing.
     catches a wrong guess before it becomes code. (Case: invented an entire cost model for a new
     game-outcome state, flagged it as the user's to overturn, and described it in four internal
     nouns. Their reply: "Not sure what you mean with all these. [It] should do nothing basically.")
+  - **A consequence inside an INVISIBLE system is not a consequence they can evaluate.** Rewriting a
+    mechanism as an outcome is not enough if the outcome lands in a stat the product never shows.
+    Before citing any effect as a benefit or a reassurance, check that the thing is SURFACED — grep
+    the UI for it. If nothing draws it, say so in the same breath ("nothing displays this today") or
+    leave it out; a hidden number presented as a user-facing upside is jargon wearing a plain-English
+    coat. The check pays for itself twice: it repeatedly turns up that the system is invisible,
+    unpersisted, or read by exactly one caller — a REAL finding about the product, usually worth more
+    than the sentence you were trying to write. (Case: reassured the user that a streak counter
+    survived a new outcome state. Their reply: "what streak?" It was displayed nowhere, read by
+    exactly one item, and never written to the save file, so it silently zeroed on reload. Three
+    defects, surfaced only because the phrase got queried.)
 - **Organize the deliverable around the USER'S NEXT DECISION, not around your pipeline's structure —
   and never let harness bookkeeping lead a reply.** Two failure shapes. (1) Analysis delivered as an
   inventory of what the process found (per-lens sections, cluster lists, id dumps, "the checks caught
