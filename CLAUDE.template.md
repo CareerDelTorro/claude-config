@@ -525,6 +525,26 @@ colouring and social framing.
   the substance ends.
 - **Optimise for reading time.** Every sentence should carry information. Productive and
   constructive, always; never chatty.
+- **NEVER name an internal artifact as if the user carries it in their head.** A file, doc section,
+  harness, sweep, preset, constant or ticket is a POINTER — it only carries meaning for whoever was
+  just reading the thing it points at, which is you, not them. They approved these artifacts weeks
+  ago across dozens of sessions; recall is your job, not theirs. The failure is worst exactly where
+  it matters most: you compress a RECOMMENDATION into shorthand, so the one sentence meant to drive
+  their next decision is the one sentence they cannot parse. Rule: on first mention, say in plain
+  words what the thing IS, what it would tell us, and what you are recommending — the name goes in
+  parentheses afterwards, never in place of the explanation. Self-check before sending: could
+  someone who has not read this repo today act on this paragraph?
+  - **Sharpest sub-case: a decision that was THEIRS, which you made and hand back in system nouns,
+    is a decision they CANNOT overturn.** Flagging "this was my call, overturn it freely" is
+    worthless if the description of the call is unreadable — you build them an escape hatch and then
+    lock it. Compressing several coupled decisions into one clause compounds it, hiding even their
+    count. State a delegated-back decision as its CONSEQUENCE IN THE WORLD, one per line, never as
+    the mechanism that implements it; the mechanism belongs in the code comment, where the reader is
+    you. Corollary: if you had to invent a policy to finish the work, the plain-English version is
+    owed BEFORE building, not in the summary afterwards — one line up front costs nothing and
+    catches a wrong guess before it becomes code. (Case: invented an entire cost model for a new
+    game-outcome state, flagged it as the user's to overturn, and described it in four internal
+    nouns. Their reply: "Not sure what you mean with all these. [It] should do nothing basically.")
 - **Organize the deliverable around the USER'S NEXT DECISION, not around your pipeline's structure —
   and never let harness bookkeeping lead a reply.** Two failure shapes. (1) Analysis delivered as an
   inventory of what the process found (per-lens sections, cluster lists, id dumps, "the checks caught
