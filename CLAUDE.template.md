@@ -1177,6 +1177,33 @@ The one-liners below carry the rule; read the case-study file when a situation m
     it fixed without ever launching the app. The user's next message was that it still did not work. Two
     hypotheses I could have tested against the running program in seconds were sitting untested behind a
     script that agreed with me.)
+  - **Corollary, and the one that hides a bug rather than merely mismeasuring it: WHEN A PROBE HAS TO
+    PARTITION OBJECTS INTO GROUPS, KEY ON THE IDENTITY THE SYSTEM ITSELF STAMPS — never on a derived
+    proxy (position, type, name, colour, order).** A proxy is a re-derivation of a fact the object is
+    already carrying, so it can disagree with the truth; and when it does, the probe does not error, it
+    silently reports confident, well-formed numbers **about the wrong objects**. The failure mode that
+    makes this worse than an ordinary bad measurement: a proxy filter can EXCLUDE THE VERY OBJECT
+    CAUSING THE BUG, so the instrument returns a clean bill of health for a system that is visibly
+    broken — and every theory built on that "clean" reading is a theory about a case the probe never
+    watched. Two tells, both cheap: (1) I am about to write `if (x < 0)`, `if (type == Foo)` or
+    `if (name.startsWith(...))` to decide *which side / whose / which group* something belongs to,
+    while the object carries an owner field already; (2) my measurement says fine and the pixels (or
+    the user) say broken — that disagreement localises the fault to the instrument, and the first thing
+    to re-examine is how it decided what to look at. **Corollary on the arithmetic: before believing a
+    ratio that lands on a suspiciously round number, check that both sides are in the same UNITS.** A
+    tidy 2.0 is far more often an edge-to-edge measured against a centre-to-centre than it is a
+    discovery, and its very tidiness is what makes it persuasive enough to launch a theory. (Case:
+    chasing a report that one on-screen entity was drawn overlapping another, I keyed the probe's
+    "which side is this" test on the sign of a coordinate — which broke the moment the advancing group
+    crossed the midline, so it tracked two *friendly* entities and called their spacing the contact
+    gap. I then "fixed" it to key on entity type, which was worse: the offending entity is created
+    mid-run as a DIFFERENT type from the one it replaced, so a type filter excluded the one object the
+    whole bug was about, and the probe reported zero overlapping samples for a scene whose screenshot
+    showed one thing two-thirds buried under another. An owner field had been stamped on every object
+    at creation the entire time. In the same episode I had compared an edge-to-edge gap against a
+    centre-to-centre target, got 1.996, and read that "exactly 2.0" as evidence of a specific
+    calibration error — four theories, all refuted, all downstream of a units mismatch and a proxy
+    filter.)
   - **Corollary — a "drop-in" replacement asset must preserve the original's INTRINSIC size.** When I
     author a replacement for an existing sprite/asset, changing its resolution while keeping its
     pixels-per-unit (or DPI, or viewBox) silently rescales its world size and therefore every existing
