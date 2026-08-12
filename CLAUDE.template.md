@@ -889,6 +889,37 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
     The other writer ran in the update phase, the coroutine after it — the coroutine's write was
     likely the one rendering all along; the probe simply read between the two. A late-update
     probe settled it, and the durable fix was composing the impulse inside the owning writer.)
+- **A parallel fan-out that awaits ALL its work is hostage to its slowest item.** When I dispatch
+  N independent jobs and block on every one finishing, a single hung, slow or looping job stalls
+  the whole batch indefinitely — and I won't notice unless I look, because "still running" and
+  "wedged" look identical from outside. Guards: don't fire-and-forget a long fan-out; when one is
+  wedged, kill the batch and HARVEST the results the finished jobs already produced (they are
+  usually journaled) rather than throwing the run away; and prefer a shape that doesn't hard-block
+  on every item — a per-item timeout, or a streaming pipeline — when the jobs are independent.
+  - **"You'll be notified when it completes" is not a liveness guarantee, and a "do not poll"
+    instruction silently converts into "never check".** A harness that re-invokes me when
+    background work finishes is telling the truth about work that FINISHES. A wedged job completes
+    never, notifies never, and is externally indistinguishable from a job thinking hard — so the
+    instruction that is right about results is wrong about liveness, and because it is concrete and
+    repeated it quietly beats the softer "check on it". Split the two: **poll the RESULT never;
+    check LIVENESS cheaply and often.** Liveness costs no model round-trip — the transcript
+    directory's file mtimes say who moved in the last minute and who has been silent for ten, and
+    one directory listing answers it for the whole batch. The tell that I've conflated them: I'm
+    about to give "I'll be notified" as my reason for not looking at something.
+  - **The wedge is usually self-inflicted: a fan-out whose brief is already complete must be handed
+    NO exploration tools.** If I did the measuring and wrote every number into the brief, then
+    file/shell/web access isn't an option the agent might use well — it's a liability with three
+    costs: latency (minutes spent re-learning what it was just told), accuracy (it re-derives from
+    mid-refactor source what I measured off the running system), and hang risk (any tool call can
+    fail to return, and that agent is then gone). Grant tools when an agent must DISCOVER
+    something; withhold them when it must THINK about something. And say it in the prompt in as
+    many words — "this brief is complete, do not read files" — because the default behaviour of a
+    capable agent handed a codebase and a question is to go and look. (Case: a six-way design
+    fan-out was given a brief containing every measured coordinate, plus full tools. Four of six
+    went straight to grepping the source instead of designing, one hung on a shell call that never
+    returned and sat dead for eleven minutes, and zero of six finished; the user had to point out
+    that some had stalled. Relaunching the identical script with "DO NOT USE ANY TOOLS" added to
+    the brief was the entire fix.)
 - **Size scope and risk before any big rework, and be willing to say "not worth it."** Flag
   large/high-risk work explicitly; prefer the smallest change that addresses the real issue.
 - **Be honest about tradeoffs and dead ends; don't oversell.** Separate a "real win" from
