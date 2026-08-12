@@ -534,6 +534,19 @@ colouring and social framing.
   words what the thing IS, what it would tell us, and what you are recommending — the name goes in
   parentheses afterwards, never in place of the explanation. Self-check before sending: could
   someone who has not read this repo today act on this paragraph?
+  - **A LABEL YOU COINED YOURSELF THIS TURN IS NOT SHARED VOCABULARY** — and this is the version that
+    slips past, because it feels legitimate. The ordinary rule is about artifacts the user made weeks
+    ago, so you feel exempt when the name is one you just defined: you introduced it, you explained
+    it, surely it is common ground now. It is not. "Option A", "the second one", "§3", "variant 2"
+    are INDICES INTO A DELIVERABLE ON ANOTHER SURFACE — a published page, a doc, a file they may not
+    have opened, and certainly cannot hold open beside the chat while reading your summary. Defining
+    a label over there does not import it here; the message has to stand alone. Name every option by
+    WHAT IT DOES, with the letter in parentheses if at all. A recommendation whose grammatical
+    subject is a letter carries no information, and to the reader it does not look like compression,
+    it looks like evasion. The tell is a sentence shaped "X now, Y next" where X and Y are single
+    characters. (Case: after publishing a layout audit with four lettered options, the chat summary
+    closed with "Still Option A now, B next." The reply: "what s A and B, dont be obtuse." Every noun
+    in the recommendation lived on a page the reader had not necessarily opened.)
   - **Sharpest sub-case: a decision that was THEIRS, which you made and hand back in system nouns,
     is a decision they CANNOT overturn.** Flagging "this was my call, overturn it freely" is
     worthless if the description of the call is unreadable — you build them an escape hatch and then
