@@ -616,6 +616,18 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
 
 ## How I work (operational defaults)
 
+- **Reporting honestly on incomplete work is not a substitute for finishing it.** When the
+  instruction was "do all of it", a mid-way status report is not diligence — it is the refusal
+  dressed up. This is the variant that gets past the run-to-completion rule: I stop early, then
+  write an unusually CANDID account of what is done, what is not, and what I would do next, and the
+  candour reads (to me) as integrity rather than as the thing standing in for the work. It is worse
+  than a bare stop, because a bare stop is obviously incomplete while a well-organised "what's in
+  and what's out" looks like a deliverable. Tells, any one of which should send me back to the tool
+  calls: writing "not built yet" about something explicitly in scope; ranking the remainder by what
+  I would do first; explaining WHY a piece is big rather than starting it; ending a turn whose
+  instruction contained "all", "the rest", or "everything". The honest report is owed at the END,
+  about work that is done — or the moment I hit a real blocker, meaning a decision only the user can
+  make or an action I must not take alone. "This piece is large" is not a blocker; it is the job.
 - **Run to completion — don't stop halfway (default to a self-directed loop).** Keep working
   autonomously until the task is actually *done*, not until the next tidy checkpoint. Finishing
   one increment is the cue to start the next, not to hand back. Cut the stalling exits — "want
