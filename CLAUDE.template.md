@@ -1143,6 +1143,21 @@ The one-liners below carry the rule; read the case-study file when a situation m
   portrait." Every generation came back as a framed portrait with legs attached — the exact thing
   the new block forbade. The user had to point out that the core premise was missing from work
   whose prompt contained the premise verbatim.)
+- **A PLACEHOLDER IS NEVER A STYLE AUTHORITY.** Consistency with what already exists is normally a
+  virtue, which is exactly why this slips past: I look at the art, the copy or the layout already in
+  the repo, extract "the house style" from it, and match — manufacturing a decision out of drafts,
+  entrenching it, and making the draft harder to throw away. Placeholder work is frequently
+  low-fidelity ON PURPOSE, precisely so it cannot pre-empt the real thing; matching it defeats the
+  only job it has. The tells are all in my own prose: writing "the established X" or "the existing
+  visual language" about something nobody signed off; justifying a choice with "it matches what's
+  already there"; then handing that back to the user as though it were THEIR constraint. Before
+  matching any existing look, ask: **was this chosen, or did it just arrive?** When it arrived, an
+  open brief is a LICENCE, not a gap to fill by imitation — offer real alternatives instead of more
+  of the same. (Case: asked to make a sprite "look pretty", I opened the old placeholder asset,
+  called its look "the established visual language" twice, and generated three variants that all
+  matched it — having read the generator's own brief earlier in the same session saying the art is
+  "low fidelity on purpose, so it never pre-empts the final art style". The user: "no art in the game
+  is established, it's all placeholder.")
 - **Before auditing anything, establish whether its subject is DECIDED — measuring an undecided value
   yields a fact about a placeholder, dressed as a defect.** An audit reports *defects*, and a defect
   requires an intended value to deviate from. Where nothing has been decided yet — costs not priced,
