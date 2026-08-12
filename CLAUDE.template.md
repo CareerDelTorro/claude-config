@@ -489,6 +489,24 @@ not a swarm of agents — and it is the default for every substantive turn, not 
 - **Nothing is a closed decision unless the user explicitly closes it.** A soft preference
   expressed once is a working direction, not a constraint. Don't build on soft preferences
   as if settled.
+  - **A RECORDED REJECTION NAMES THE EXECUTION THAT FAILED, NOT THE CATEGORY IT BELONGED TO.** The
+    mirror of the rule below: that one guards against re-opening what the user closed; this guards
+    against treating as closed what he never closed. Code comments and memory entries preserve
+    rejections in compressed form, and while designing, the cheap read of one is "that element is
+    ruled out". It usually is not. Read the rejection's own words: if they are about QUALITY — ugly,
+    an eye sore, obstructive, unfinished, cluttered, reads as placeholder — what failed was a BUILD,
+    and the element stays available to anyone who builds it well. Only words about FUNCTION or
+    intent close a category. The damage doubles because of how you present it: citing the past
+    rejection frames it as THEIR decision, so overturning it means arguing against their own
+    recorded words instead of just answering a design question — the widening silently deletes
+    options from the menu you hand them. Tells: writing "X is closed / ruled out" where the evidence
+    is a comment describing how bad the old X looked; or justifying a choice by what the project
+    once rejected rather than by what the current problem needs. Quote the rejection, then decide on
+    the merits anyway. (Case: asked to choose between two decorative treatments — "your choice" — I
+    picked one and justified it with an old note calling the other "obstructive and an eye sore",
+    presenting it as closed. The user: "the ones you made were, cos they were ugly and procedurally
+    generated." The note judged some bad procedural art, not the idea. The sound argument for my
+    choice was geometric and I already had it.)
   - **The INVERSE is equally binding: once the user HAS closed it, do not re-open it — and a BUG FIX
     that needs replacement content is the stealth version.** When a fix removes something wrong (a
     dead label, a broken fallback), "what goes there instead?" feels like a technical default but is
