@@ -899,6 +899,26 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
 The one-liners below carry the rule; read the case-study file when a situation matches.
 
 **Iteration & debugging**
+- **An inherited post-mortem's SYMPTOM is evidence; its CAUSE is a hypothesis.** A comment,
+  memory or status note saying "we hit X and it was because Y" is two claims of very different
+  quality. The symptom was OBSERVED — trust it, and treat a matching symptom today as a strong
+  hit. The cause was INFERRED by someone under the same time pressure I'm under now, often
+  without a controlled test, and it is the half that decides my fix. Adopting Y wholesale
+  because the symptom matched is how I ship a change that cannot work: it targets a mechanism
+  that was never operating. The tell is that my diff is shaped entirely by a sentence I never
+  verified — I'm fixing the recorded cause rather than the observed defect. Guard: restate the
+  recorded cause as a falsifiable prediction and find the ONE observation that separates it
+  from the alternatives before writing code; a recorded cause usually predicts something
+  checkable ("it only happens with N of them"), and one minimal repro kills it.
+  - **Corollary: restoring a FLAG is not restoring the STATE the flag changed.** Setters that
+    toggle rendering or behaviour modes routinely allocate adjacent per-object state as a side
+    effect, and the inverse setter puts the flag back without reclaiming it — undo is not
+    symmetric unless the API says so. When a setter is the suspect, diff the object's FULL
+    state across a set/unset round-trip, not just the property I set.
+  - **The move that actually localises it: hold everything constant but one input.** When two
+    build paths produce the same object and only one renders correctly, stop generating
+    hypotheses and enumerate every shared attribute until a single one differs — that is what
+    turns "it's probably the compression / the streaming / the shader" into a measured cause.
 - **Diagnose the SERIES, not the latest complaint.** After ~2 failed fixes in the same
   complaint-family, stop tuning and ask "what single absence would make all these verdicts
   true at once?" — then re-derive from the full model. Repeated "still flat" feedback is data
