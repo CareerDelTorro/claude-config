@@ -886,6 +886,20 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
 
 ## Code scope (match robustness to the phase)
 
+- **A request to change a MAPPING is not a licence to move the things being mapped.** When the ask
+  is "pair A with B differently" — leftmost with leftmost, each row to its own column, match these
+  up by name — the request is about the assignment FUNCTION. The domain and the range are not in
+  it. The tell is precise and checkable before committing: my diff touches how the slots, positions
+  or buckets are GENERATED, not just which item is handed to which. Editing the spacing, range,
+  layout or ordering that PRODUCED the things being matched widens the ask into a visible change
+  nobody requested — and visible is the operative word, because they see it at once and must spend
+  a turn undoing it.
+  - **Flagging it does not cure it.** Noticing the extra change and offering to revert beats hiding
+    it, but it still spends their attention on a decision I invented. The fix is not making it.
+  - **The creep arrives wearing good engineering.** Mid-task I find a real edge case in the existing
+    layout, and "fixing it properly" feels like diligence rather than drift. Note the edge case,
+    ship the mapping, raise the layout separately so it stays their call. The one case worth raising
+    BEFORE building is a genuine conflict — the mapping cannot hold with the layout as it stands.
 - **Make only the change requested.** No extra files, abstractions, or "while I'm here"
   refactors unless they're the direct path to the ask. Current models tend to over-build;
   resist it, especially in the throwaway-prototype phase ("build for the test, throw it away").
