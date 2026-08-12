@@ -899,6 +899,24 @@ sites in that genre are mostly one screen: key art, logo, one line, one button.)
 The one-liners below carry the rule; read the case-study file when a situation matches.
 
 **Iteration & debugging**
+- **When my OWN artifact shows the defect the user is reporting, "that's an artifact of my
+  instrument" is a claim I have to disprove, not a free pass.** The cheapest explanation available
+  is always "that's my test setup, not the product" — cold cache, warm-up frame, sampling timing,
+  a quirk of how I'm running it — and it is the one explanation that lets a real defect through
+  while feeling rigorous. It is admissible only AFTER the defect has been ruled out, never instead
+  of ruling it out. The tell is unmistakable: I am captioning my own evidence to explain why the
+  thing the user can see does not count. If I catch myself writing "this is just X" on a capture,
+  the next action is a test that separates X from the defect — not the next task.
+  - **The test that settles it: one frame with the suspected cause applied to some subjects and
+    not others, then the assignment INVERTED.** Same frame kills every timing/cache/warm-up story
+    outright; inverting kills "that subject just looks like that". Two captures, and no
+    explanation survives that isn't the mechanism.
+  - **A mechanism fixed at ONE point in its lifetime is not a fixed mechanism.** Once I diagnose
+    "state S makes this behave wrong", the fix is owed at EVERY window where S holds, not at the
+    moment I happened to be looking. Repairing the exit and filing it as solved leaves the defect
+    live for the whole interval by construction — and "I already fixed that" then becomes the
+    reason I stop looking when it is reported again. Enumerate the windows: when is the state
+    entered, how long does it hold, what is visible during it.
 - **An inherited post-mortem's SYMPTOM is evidence; its CAUSE is a hypothesis.** A comment,
   memory or status note saying "we hit X and it was because Y" is two claims of very different
   quality. The symptom was OBSERVED — trust it, and treat a matching symptom today as a strong
