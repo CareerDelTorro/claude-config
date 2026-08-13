@@ -414,6 +414,8 @@ is "known and intentional — not a regression to auto-fix." The user's reply wa
 left those out deliberately? Try recall." One `git log -S` would have settled it before I wrote a
 word.)
 
+153. **FEED A GENERATOR THE INPUT THE PRODUCT FEEDS IT, NOT THE INPUT IT ACCEPTS.** I sampled a generator over 400 seeds x 10 settings and reported a clean distribution; the call site computes the seed as a pure function of one of those settings, so in production the user meets exactly ten outputs, the same ten, every time. My 4000-sample distribution described a population that does not exist — the function ACCEPTS a seed, the product SUPPLIES a constant, and I varied the parameter the product holds fixed. Worse, the sampling HID the headline: "the output never changes" is a bigger finding than any percentage about it, and my method could not surface it. **Read the CALL SITE and use the arguments that actually arrive there; if a parameter is constant in production, holding it constant IS the measurement.** Tells: I am looping over seed/index/difficulty across a range I chose myself; I can quote the signature but not the line that calls it; my result is a percentage over a population size I invented rather than the one the user meets; the interesting finding would be a DEGENERACY, which broad sampling is precisely the wrong shape to see. Inverse of rule 31 (too few) — this is sampling WIDER than the product uses, which feels rigorous and is fiction; cousin of 129, substituting a plausible stand-in for the identity the system stamps.
+
 ## Adversarial self-check (standing rule)
 
 Before presenting a **load-bearing** claim, a diagnosis, or a conclusion that will drive real
