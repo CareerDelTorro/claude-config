@@ -1026,6 +1026,27 @@ The one-liners below carry the rule; read the case-study file when a situation m
     live for the whole interval by construction — and "I already fixed that" then becomes the
     reason I stop looking when it is reported again. Enumerate the windows: when is the state
     entered, how long does it hold, what is visible during it.
+- **"WHAT WENT WRONG WITH X" IS ANSWERED BY THE COMMITS AFTER X, NOT BY X'S OWN COMMIT.** This
+  sits EARLIER than the two rules below it: before arguing about whether a recorded cause is
+  correct, check whether the thing it explains was subsequently thrown away. A build commit is
+  written by someone who has just succeeded, so its message is a victory lap with a list of
+  obstacles overcome — honest, specific, full of failure, and therefore indistinguishable at a
+  glance from a complete post-mortem. But it answers "what went wrong DURING construction",
+  never "did this survive contact with the person it was built for". That verdict cannot be in
+  it by construction; it lands later, in a smaller and duller commit, often titled as the thing
+  that replaced the work rather than as a retraction. The whole technique is one line:
+  `git log --oneline <buildsha>..HEAD -- <paths>`, then read the next few subjects even when
+  they look unrelated. Tells, any one of which should send me forward in history: I'm about to
+  quote a commit message as the account of how something turned out; the commit I'm quoting is
+  the one that ADDED the feature; my answer to "did it work?" is sourced entirely from the
+  artifact's own author; the record says it becomes the benchmark/reference "if it passes
+  review", a conditional whose resolution is by definition somewhere else; there is a
+  mode/toggle/flag near the feature and I have not checked what it currently equals or who
+  writes it.
+  - **Corollary — the dormant-replacement shape.** Finding finished alternatives parked behind a
+    switch that still defaults to the old thing, with no commit recording a decision, is not a
+    curiosity to mention in passing. It IS the answer to "where does this stand", and it is a
+    decision waiting on the user. Lead with it rather than burying it under the history.
 - **An inherited post-mortem's SYMPTOM is evidence; its CAUSE is a hypothesis.** A comment,
   memory or status note saying "we hit X and it was because Y" is two claims of very different
   quality. The symptom was OBSERVED — trust it, and treat a matching symptom today as a strong
