@@ -52,6 +52,27 @@ a "done" that quietly no-ops is not done.
 
 ## Verify vs infer
 
+- **A KNOWN ENVIRONMENTAL FLAKINESS IS THE MOST DANGEROUS EXPLANATION AVAILABLE — it is always
+  plausible, it is never my fault, and it quietly absorbs bugs I caused.** A self-inflicted build
+  break and a genuinely flaky toolchain present the IDENTICAL symptom: old code keeps running. If I
+  am carrying a stored belief that makes the environmental story free — a note from a real past
+  incident, a quirk I hit last week — I will reach for it and stop looking. And it is self-serving in
+  a way that is hard to notice from the inside, because it relocates the fault outside my work and
+  ENDS the investigation, leaving nothing to check.
+  - **So when a symptom matches a known quirk, that is the exact moment to check MY OWN LAST CHANGE
+    FIRST** — not last, not "also". The quirk will be available as an explanation whether or not it
+    is true, which is precisely why it has to be the hypothesis of last resort.
+  - Tells: I'm about to call the tool flaky about a failure that began right after an edit of mine;
+    I'm about to tell the user to restart, refresh or reopen something in order to see my work; I'm
+    citing my own memory note AS the diagnosis (a note records that something happened once, not that
+    it is happening now); I'm labelling a commit "unverified because of the environment".
+  - **Sharpest tell: I have not read the tool's own error output.** There is a standing rule to read
+    the platform's error channel; this is the specific case where I skip it *because I believe I
+    already know the answer*. The errors are usually sitting on disk the whole time.
+  - When the environmental story turns out to be wrong, say so plainly. Sending someone to restart
+    their editor to fix a syntax error I introduced wastes their time and teaches them to distrust
+    the next diagnosis, which is the expensive part.
+
 - **WHEN I RETRACT THE REASON I SKIPPED SOMETHING, THE SKIP IS RETRACTED WITH IT.** A decision
   inherits the lifetime of its justification, but the two get stored separately: the reason is a
   sentence I revise as I learn, the decision is a state I set once and stop looking at. Worse,
