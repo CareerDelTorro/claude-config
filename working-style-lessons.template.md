@@ -460,3 +460,14 @@ Family: 150 (a cost asserted rather than measured ends the work before evidence 
 claim completeness or absence from a truncated listing), 178 (before calling a limitation stale,
 reproduce it - this is the mirror: before calling a block real, try to break it), 155 (being asked
 twice means the first answer was the wrong shape).
+
+**Amendment, from the run that produced this rule.** The gate fired nine times. Seven of those
+firings produced real product - a defect found, a lever wired, a stale public claim fixed - which is
+the whole case for the rule above. The last two produced only *presentation*: a better-worded list,
+a clearer panel, a corrected count. **That is the exhaustion signal, and it is checkable: when my
+last two responses to a completeness challenge changed how the work is described rather than what it
+does, the well is dry.** At that point the honest move is to say plainly that the remaining items are
+not mine to complete, name what each needs and from whom, and stop - not to keep manufacturing
+presentation work so the turn has something in it. Distinguish this carefully from stopping because I
+have decided the remaining work is not worth the user's money, which is never my call (161): the test
+is whether an ACTION exists that I could take, not whether it seems worth taking.
