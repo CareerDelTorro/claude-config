@@ -471,3 +471,35 @@ not mine to complete, name what each needs and from whom, and stop - not to keep
 presentation work so the turn has something in it. Distinguish this carefully from stopping because I
 have decided the remaining work is not worth the user's money, which is never my call (161): the test
 is whether an ACTION exists that I could take, not whether it seems worth taking.
+
+### 180. I cannot carry a binary payload through my own text output, and "I'll be careful" is not a plan.
+
+An asset sat in cloud storage. The API could read it and hand me the bytes as base64; the browser
+could see the file but the owner had downloads disabled for viewers. So the only path left ran
+through my own transcription. Three files came through perfectly. Three others came out truncated
+to roughly a tenth of the real length, because when a token stream gets long I elide rather than
+reproduce, and I do not notice myself doing it.
+
+**The elision is invisible from the inside.** Each attempt felt like a faithful copy. Only an
+external check caught it. Two independent attempts at the same file even differed from each other
+in only two characters while BOTH being wrong, which looks like evidence of near-perfect copying and
+is nothing of the sort.
+
+**Rule: a binary artifact must move over a channel that moves bytes** - a download, a file copy, a
+mounted path, a command that writes the file - **never through my own output.** If no such channel
+exists, that is a genuine blocker to report, not a challenge to grind at.
+
+**And whenever bytes do pass through anything lossy, gate on a checksum before use.** Every format
+worth carrying has one: PNG has a CRC32 per chunk, ZIP has one per entry, most archives and many
+protocols carry a digest. The gate cost one function and it caught every bad attempt cleanly, so
+nothing damaged ever reached the project. Without it I would have shipped a corrupted asset and the
+defect would have surfaced much later, with no trace back to me.
+
+**Tells:** I am about to paste a base64 blob longer than a screen; I am reproducing content rather
+than writing it; my plan is "transcribe it carefully"; a previous attempt at the same content
+already failed. Also: **the size of what I produced versus what was promised is the cheapest possible
+check** - the source told me the byte count before I started, and comparing it took one line.
+
+Family: 156 (never route escape-bearing content through a shell heredoc - same root, a different
+lossy channel), 85 (define done as a signal I can run), 179 (test the block - I did, and this one
+survived testing, which is what makes it real).
