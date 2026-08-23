@@ -420,3 +420,43 @@ Mechanically: after each pass, tag every finding with the element it lands on an
 before writing the next revision, even if it was load-bearing for the last one — especially then. 159 is the
 same physics inside one document; this is 159 across iterations, and 89's "smallest change that addresses the
 real issue" is what the loop keeps proving.
+
+### 179. An automated "you are not done" is an instruction to RE-RUN THE CHECKS, not to re-explain the blocks.
+
+A completion gate fired twice on the same goal. Both times I answered it the same way: I restated
+the list of blocked items, in better prose, with the same nouns in it. The second time I finally
+treated the challenge as a claim to test rather than a misunderstanding to correct - and two of the
+five "blocks" dissolved inside ninety seconds. One of them was an entire sub-project sitting in the
+repository, which I had declared absent after running a `find | head -20` that truncated before
+reaching it (rule 11, in a new costume). Another was a stale public claim that I could simply fix.
+
+**The shape of the failure is specific and worth naming: a block, once written down, stops being a
+hypothesis and becomes a fact I quote.** I wrote an absence into a checklist row; from then on it
+was something I *knew*, and every subsequent turn re-served it rather than re-tested it. Restating
+a block feels like diligence - I am being honest about what is not done - but it produces nothing,
+and it is indistinguishable to the reader from having checked.
+
+**Rule: when told the work is incomplete, do not answer with words. Re-run the check behind every
+block, cheapest first, and only speak once at least one has been re-tested.** A block that survives
+a genuine second look is worth reporting and is now much stronger; a block that dissolves was never
+a block, it was a sentence.
+
+**Tells**, in order of sharpness:
+- My reply to a completeness challenge contains the same item names as my previous reply.
+- I can quote a blocker from my own earlier artifact but cannot name the command that established it.
+- The blocker is phrased as an absence ("not in the repo", "nobody has sent it"). Absences are
+  exactly what a truncated, mistyped or wrongly-scoped query manufactures for free.
+- I am about to write "waiting on you" for something I have not tried to do myself in this session.
+- The gate fires a second time. Once is a misunderstanding; twice means it is reading something real
+  that my prose is papering over.
+
+**Corollary, and the reason this compounds:** an artifact I publish to the user turns my assertions
+into their reference. When I write a block into a shared checklist I have not merely recorded a
+belief, I have delegated it to them - they now plan around it, and they cannot see that it was never
+verified. So the verification bar for anything I write into a shared artifact is higher than for
+anything I say in chat, not lower.
+
+Family: 150 (a cost asserted rather than measured ends the work before evidence exists), 11 (never
+claim completeness or absence from a truncated listing), 178 (before calling a limitation stale,
+reproduce it - this is the mirror: before calling a block real, try to break it), 155 (being asked
+twice means the first answer was the wrong shape).
