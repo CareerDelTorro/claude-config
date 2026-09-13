@@ -45,8 +45,8 @@ has loaded). A running session won't pick up edits — the file is read once at 
   be argued with; some people don't.
 - **Adversarial self-check** — if you build a custom review slash-command later, wire it into the
   "escalate" line.
-- **Hard-won lessons** — these are generic debugging traps. The real value of this section is *your
-  own* accreted lessons (see §4). Treat what's here as examples of the format.
+- **Hard-won lessons** — generic debugging traps. Keep the ones that apply to your work and cut
+  the rest.
 
 ## 3. Merge, don't clobber — and keep it lean
 
@@ -62,20 +62,9 @@ lower-signal rules get dropped first. So:
 - Route *sometimes*-relevant material (long playbooks, war-stories, domain history) into on-demand
   docs you point at, not into the always-loaded file.
 
-## 4. How it should grow
-
-- **Add a rule only after you actually observe the failure** — ideally the *second* time it happens,
-  not preemptively. A file grown from real failures is high-signal; one grown from imagined ones is bloat.
-- **Distill each lesson to a one-liner** in `CLAUDE.md`; if it has a useful backstory, put the full
-  narrative in a companion file (e.g. `~/.claude/working-style-lessons.md`) and reference it, so it
-  loads on demand instead of every session.
-- **Prune rules Claude already follows** without being told — they're just noise.
-
-## 5. Quick start
+## 4. Quick start
 
 1. Fastest: open Claude Code in a clone of this repo and follow **`ADAPT-WITH-CLAUDE.md`**.
 2. Or manually: copy `CLAUDE.template.md` to `~/.claude/CLAUDE.md` (or merge into your existing one),
    fill the ⟨domain⟩ placeholder, make the tone/pushback taste calls in §2.
 3. Start a fresh session; run `/memory` to confirm it loaded.
-4. Over the following weeks, add your own one-line lessons as you hit real failures; prune anything
-   that isn't earning its place.

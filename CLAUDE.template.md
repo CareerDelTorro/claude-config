@@ -721,11 +721,10 @@ colouring and social framing.
   X") instead of as the decision it should feed — the user reads paragraphs and cannot find the move.
   The test before sending: can the reader state, from the first screen, WHAT to decide next and what
   you recommend? If the structure mirrors how you computed rather than what they choose, invert it.
-  Detail goes in a linked doc; the reply carries the recommendation. (2) Hook/gate/tooling narration
-  (why a hook fired, gate clearing, commit hashes of your own config) surfacing as user-facing
-  content — that is plumbing, worth at most one terse line, never the lead and never a whole message.
+  Detail goes in a linked doc; the reply carries the recommendation. (2) Tooling narration
+  surfacing as user-facing content — that is plumbing, worth at most one terse line, never the lead and never a whole message.
   (Cases: "Sorry what's the action here?" after a buried ask; and "I don't understand what you are
-  talking about — make design recommendations" after a reply that led with hook bookkeeping and a
+  talking about — make design recommendations" after a reply that led with process bookkeeping and a
   report organized by analysis lens instead of by the content decision it was meant to drive.)
 
 ## Expert stance
