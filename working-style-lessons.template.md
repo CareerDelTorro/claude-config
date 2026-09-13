@@ -118,60 +118,6 @@ every turn.*
   When an animation "isn't showing," measure the driven value across frames before concluding
   it doesn't work.
 
-## The prime directive must fire on user corrections — not a one-line "you're right" (2026-07-19)
-
-**What happened:** Two nested failures in one session. (1) After a large multi-part build (rescale
-to small numbers + a rarity system + 40 units, all harness-green), I ended the turn with "Want me
-to keep going to ~46 + wire the in-game badge, and/or commit first?" — a textbook stalling exit,
-despite the user's explicit "**don't stop until you're done. We can adjust later.**" (2) The user
-replied "**why did you stop?**" — an unmistakable friction signal — and I *still* did not run the
-prime-directive loop: I said "you're right" and resumed building. The user then had to name the
-actual failure: "**why didn't you self-analyse and adjust CLAUDE.md? I've put it as a priority
-instruction.**"
-
-**Root cause:** The capture loop competes with task momentum and loses, and a one-line
-acknowledgement *feels* like it discharges the correction — so the loop silently never fires. The
-trigger as written ("any friction/frustration") was too diffuse to reliably catch a "why did you
-X?" arriving mid-task, especially when the same message also contains a new instruction that pulls
-me forward.
-
-**The fix (made concrete in the prime directive):** A user correction of my behaviour — "why did
-you…", "why didn't you…", pushback, frustration — is now named as the *single loudest* trigger,
-and it runs the loop FIRST, before answering the substance or resuming, even when the message also
-hands me a new task. The acknowledgement is explicitly *not* the loop; the loop's output is a
-durable edit to this file. The self-tell: "I'm about to acknowledge-and-continue" = the trigger.
-
-**On the stopping itself (the first failure):** the "Run to completion" rule *already* forbade the
-exact exit I used ("want me to continue?"). So the rule wasn't missing — it failed to *fire*
-against an explicit "don't stop" plus a natural milestone (a stated floor of "at least 40 units",
-a green harness checkpoint). **A stated floor is a floor to pass, not a target to stop at.** When
-the user has said run-to-completion, a milestone is a cue to start the next increment, never to
-ask permission — and "we can adjust later" means *keep building*, not *stop and confirm*.
-
-## Record the push-target pointer, and verify what a target IS before writing to it (2026-07-19)
-
-**What happened:** The prime directive says "commit and push to the config repo," but across a
-whole session I committed lessons to the local `~/.claude` repo with **no push target** — the
-repo had no remote, and the URL was recorded nowhere I could read (not in the git config, not in
-CLAUDE.md). It lived only on GitHub / in the user's head. He had to hand me the URL and ask "why
-was that missed?" Then, checking before pushing, I found the repo
-(`github.com/<your-account>/claude-config`) is a **PUBLIC, sanitized template** — not a mirror of
-the private config. Pushing the raw personal `CLAUDE.md` (real name, project names, session
-case-studies) there would have leaked personal data publicly.
-
-**Two root causes, two lessons:**
-1. **A directive that acts on an external resource must record the concrete pointer where I can
-   read it** (the URL in CLAUDE.md, or configured as a git remote) — not leave it in the user's
-   head. When I find "no remote / no pointer / no endpoint," that is a gap to surface loudly and
-   resolve up front, never a footnote I shrug past while committing locally anyway. A step whose
-   target I can't locate is a blocked step, not a done one.
-2. **Verify what a write-target IS before writing to it — especially its visibility.** "The config
-   repo" turned out to be public and sanitized; the literal instruction ("push there") collided
-   with a privacy boundary. This is the same instinct as "look at the target before deleting/
-   overwriting," extended to push/publish targets: check public-vs-private and template-vs-mirror
-   before sending personal data, and when the literal instruction conflicts with what the target
-   actually is, stop and surface it rather than following the words off a cliff.
-
 ## Don't harden what you flagged as uncertain — feel-validate before entrenching (2026-07-19)
 
 **What happened:** The THE GAME v2 build had a "typed army slots" mechanic — melee-only / mixed /
